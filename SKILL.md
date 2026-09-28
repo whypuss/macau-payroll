@@ -11,7 +11,7 @@
 | `simulate.py` | 模擬 100 員工 × 2026年9月: 輪更、打卡、年假/病假/無薪假 |
 | `payslip.py` | 糧單計算: 出勤記錄 → 應稅工資 → 稅 → 實發 |
 | `test_payroll.py` | 13 tests: 稅制 (預期值人手按官方稅表計出) |
-| `test_payslip.py` | 18 tests: 人手糧單個案 + 年假額度 + 100 人模擬不變量 |
+| `test_payslip.py` | 20 tests: 人手糧單個案 + 年假額度 + 社保 + 100 人模擬不變量 |
 | `data/` | 模擬數據 (employees.json, records.json, 供檢查) |
 
 ## 完整流程
@@ -20,7 +20,7 @@
 cd ~/workspace/skills/macau-payroll
 python3 simulate.py          # 生成 100 人模擬數據 → data/
 python3 test_payroll.py      # 13 tests, 稅制
-python3 test_payslip.py      # 18 tests, 糧單
+python3 test_payslip.py      # 20 tests, 糧單
 ```
 
 ```python
@@ -43,8 +43,18 @@ slip = compute_payslip(employees[0], records["E001"])
 應稅工資 = 月薪 + 夜更津貼 + 加班費
            - 無薪假扣款 - 缺勤扣款 - 無證病假扣款 - 遲到扣款
 稅款 = monthly_withholding(應稅工資)
-實發 = 應稅工資 - 稅款
+實發 = 應稅工資 - 稅款 - 社保僱員供款 (MOP 30/月, 稅後代扣)
 ```
+
+### 社保供款 (社會保障基金強制性制度)
+- 每月 MOP 90/人: 僱主 MOP 60 (公司成本, 不扣員工) + 僱員 MOP 30 (稅後代扣), 比例 2:1
+- 僱主須於每年一、四、七、十月按季繳納上一季度供款
+- 勞動關係開始/終止月份工作少於 15 日, 該月無須供款
+- 僱員供款在本 skill 不扣減應稅工資; 是否可扣減應課稅收益需會計核實
+- 散工 (具期限勞動合同) 供款額另計, 本模擬不設散工
+
+資料來源: 社會保障基金 (第4/2010號法律); 供款金額見 FSS 年報
+(僱主 60 / 僱員 30, 比例 2:1)。
 
 模擬假設 (非法律意見, 實際執行前請 HR 核實):
 - 日薪 = 月薪 / 30, 時薪 = 日薪 / 8
@@ -68,7 +78,7 @@ slip = compute_payslip(employees[0], records["E001"])
 
 ## 驗證紀律 (重要)
 
-- 計算正確性由兩個 test files 共 31 個 tests 保證, 唔係由 AI「睇過」保證。
+- 計算正確性由兩個 test files 共 33 個 tests 保證, 唔係由 AI「睇過」保證。
 - 人手個案的預期值全部人手計出, 非生成; 模擬不變量驗證會計恆等式
   (實發+稅+扣款 == 月薪+津貼+加班費)、非負、扣款公式、確定性。
 - 改動任何計算代碼或參數後, 必須兩個 test files 全部 PASS 先算完成。

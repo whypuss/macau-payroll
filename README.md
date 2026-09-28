@@ -8,7 +8,7 @@
 ```bash
 python3 simulate.py      # 生成 100 人 × 2026年9月 模擬數據 → data/
 python3 test_payroll.py  # 13 tests：職業稅制
-python3 test_payslip.py  # 18 tests：糧單個案 + 年假額度 + 模擬不變量
+python3 test_payslip.py  # 20 tests：糧單個案 + 年假額度 + 社保 + 模擬不變量個案 + 年假額度 + 模擬不變量
 ```
 
 ```python
@@ -28,7 +28,7 @@ slip = compute_payslip(employees[0], records["E001"])
 | `simulate.py` | 模擬 100 員工 × 2026年9月：輪更、打卡、年假／病假／無薪假／缺勤 |
 | `payslip.py` | 糧單：出勤記錄 → 應稅工資 → 稅 → 實發 |
 | `test_payroll.py` | 13 tests：稅制（預期值人手按官方稅表計出） |
-| `test_payslip.py` | 18 tests：人手糧單個案 + 年假額度 + 100 人模擬不變量 |
+| `test_payslip.py` | 20 tests：人手糧單個案 + 年假額度 + 社保 + 100 人模擬不變量 |
 | `data/` | 模擬數據（employees.json、records.json，供檢查） |
 
 ## 糧單計算規則
@@ -38,8 +38,16 @@ slip = compute_payslip(employees[0], records["E001"])
            - 無薪假扣款 - 缺勤扣款 - 無證病假扣款 - 遲到扣款
            - 超額年假扣款（年假超出額度部份，當無薪假計）
 稅款 = monthly_withholding(應稅工資)
-實發 = 應稅工資 - 稅款
+實發 = 應稅工資 - 稅款 - 社保僱員供款 (MOP 30/月，稅後代扣)
 ```
+
+### 社保供款（社會保障基金強制性制度，第4/2010號法律）
+
+- 每月 MOP 90/人：僱主 MOP 60（公司成本，不扣員工）＋ 僱員 MOP 30（稅後代扣），比例 2:1
+- 僱主須於每年一、四、七、十月按季繳納上一季度供款
+- 勞動關係開始／終止月份工作少於 15 日，該月無須供款
+- 僱員供款在本 skill 不扣減應稅工資；是否可扣減應課稅收益需會計核實
+- 散工（具期限勞動合同）供款額另計，本模擬不設散工
 
 ### 年假額度
 
@@ -67,7 +75,7 @@ slip = compute_payslip(employees[0], records["E001"])
 
 ## 驗證紀律
 
-- 計算正確性由兩個 test files 共 31 個 tests 保證，唔係由 AI「睇過」保證。
+- 計算正確性由兩個 test files 共 33 個 tests 保證，唔係由 AI「睇過」保證。
 - 人手個案的預期值全部人手計出，非生成；模擬不變量驗證會計恆等式
   （實發＋稅＋扣款 == 月薪＋津貼＋加班費）、非負、扣款公式、確定性。
 - 改動任何計算代碼或參數後，必須兩個 test files 全部 PASS 先算完成。

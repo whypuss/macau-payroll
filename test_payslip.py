@@ -25,11 +25,11 @@ def leave(ltype, day, cert=True):
 # ---------- A) 人手個案 ----------
 
 def test_clean_employee():
-    # 月薪 25,000, 無假無遲到無加班 → 應稅 25,000 → 稅 828.33 → 實發 24,171.67
+    # 月薪 25,000, 無假無遲到無加班 → 應稅 25,000 → 稅 828.33 → 實發 24,141.67 (扣社保 30)
     s = compute_payslip(mkemp(25000), [work(day=d) for d in range(1, 5)])
     assert s["taxable_income"] == 25000.0
     assert s["tax_withheld"] == 828.33
-    assert s["net_pay"] == 24171.67
+    assert s["net_pay"] == 24141.67  # 扣社保 30
 
 
 def test_nopay_deduction():
@@ -40,24 +40,24 @@ def test_nopay_deduction():
     assert s["deductions"]["nopay"] == 1000.0
     assert s["taxable_income"] == 29000.0
     assert s["tax_withheld"] == 1134.0
-    assert s["net_pay"] == 27866.0
+    assert s["net_pay"] == 27836.0
 
 
 def test_sick_cert_distinction():
-    # 月薪 30,000: 2 天有證病假不扣, 1 天無證扣 1,000 → 同上, 實發 27,866
+    # 月薪 30,000: 2 天有證病假不扣, 1 天無證扣 1,000 → 同上, 實發 27,836
     recs = [work(day=1), leave("sick", 2, cert=True), leave("sick", 3, cert=True),
             leave("sick", 4, cert=False)]
     s = compute_payslip(mkemp(30000), recs)
     assert s["sick_cert_days"] == 2
     assert s["sick_uncert_days"] == 1
     assert s["deductions"]["sick_uncertified"] == 1000.0
-    assert s["net_pay"] == 27866.0
+    assert s["net_pay"] == 27836.0
 
 
 def test_night_ot_late_annual():
     # 月薪 24,000 (日薪 800, 時薪 100):
     # 2 夜更 → 津貼 160; 加班 3h → 450; 遲到 10min (扣 5min) → 8.33; 1 天年假不扣
-    # 應稅 = 24,000+160+450-8.33 = 24,601.67 → 稅 800.45 → 實發 23,801.22
+    # 應稅 = 24,000+160+450-8.33 = 24,601.67 → 稅 800.45 → 實發 23,771.22 (扣社保 30)
     recs = [work("早", late=3, day=1), work("夜", late=10, ot=2.0, day=2),
             work("夜", ot=1.0, day=3), leave("annual", 4)]
     s = compute_payslip(mkemp(24000), recs)
@@ -70,7 +70,7 @@ def test_night_ot_late_annual():
     assert s["annual_leave_days"] == 1
     assert s["taxable_income"] == 24601.67
     assert s["tax_withheld"] == 800.45
-    assert s["net_pay"] == 23801.22
+    assert s["net_pay"] == 23771.22
 
 
 def test_full_month_nopay_zero_net():
@@ -127,7 +127,8 @@ def test_tax_consistent_with_tax_module():
 
 def test_totals_reconcile():
     slips, totals = _run()
-    assert abs(totals["total_net"] + totals["total_tax"] - totals["total_taxable"]) < 1.0
+    assert abs(totals["total_net"] + totals["total_tax"]
+               + totals["total_fss_employee"] - totals["total_taxable"]) < 1.0
 
 
 def test_simulation_has_variety():
@@ -178,7 +179,7 @@ def test_excess_annual_becomes_nopay():
     assert s["deductions"]["nopay"] == 2000.0
     assert s["taxable_income"] == 28000.0
     assert s["tax_withheld"] == 1057.0
-    assert s["net_pay"] == 26943.0
+    assert s["net_pay"] == 26913.0
 
 
 def test_simulation_annual_within_entitlement():
@@ -212,6 +213,30 @@ def test_simulation_entitlement_varies():
         if e["join_date"].startswith("2026"):
             full = ROLE_ANNUAL_BASE[e["role"]] + e["annual_leave_special_extra"]
             assert e["annual_leave_entitlement"] <= full
+
+
+# ---------- D) 社保供款 ----------
+
+def test_social_security_deduction():
+    # 月薪 30,000 clean 月: 應稅 30,000 → 年化 360,000 → 應課稅 216,000
+    # 1,400+1,600+3,600+8,000+6,160 = 20,760 → 扣減後 14,532 → 月稅 1,211
+    # 實發 = 30,000 - 1,211 - 30 (僱員社保, 稅後扣) = 28,759
+    # 僱主供款 60 係公司成本, 唔扣員工
+    s = compute_payslip(mkemp(30000), [work(day=d) for d in range(1, 5)])
+    assert s["deductions"]["social_security"] == 30.0
+    assert s["social_security_employee"] == 30.0
+    assert s["social_security_employer"] == 60.0
+    assert s["taxable_income"] == 30000.0  # 社保唔扣減應稅工資
+    assert s["tax_withheld"] == 1211.0
+    assert s["net_pay"] == 28759.0
+
+
+def test_simulation_fss_totals():
+    # 100 人 × 僱員 30 = 3,000; 僱主 60 = 6,000
+    slips, totals = _run()
+    assert totals["total_fss_employee"] == 3000.0
+    assert totals["total_fss_employer"] == 6000.0
+    assert all(s["deductions"]["social_security"] == 30.0 for s in slips)
 
 
 if __name__ == "__main__":
