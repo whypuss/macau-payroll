@@ -1,0 +1,802 @@
+[
+ {
+  "id": "E001",
+  "name": "羅子華",
+  "role": "經理",
+  "monthly_salary": 41600,
+  "shift_mode": "rotating",
+  "rest_weekday": 1
+ },
+ {
+  "id": "E002",
+  "name": "曾曉君",
+  "role": "經理",
+  "monthly_salary": 41300,
+  "shift_mode": "夜",
+  "rest_weekday": 2
+ },
+ {
+  "id": "E003",
+  "name": "林建明",
+  "role": "經理",
+  "monthly_salary": 42400,
+  "shift_mode": "夜",
+  "rest_weekday": 3
+ },
+ {
+  "id": "E004",
+  "name": "梁國英",
+  "role": "經理",
+  "monthly_salary": 39000,
+  "shift_mode": "rotating",
+  "rest_weekday": 4
+ },
+ {
+  "id": "E005",
+  "name": "楊美明",
+  "role": "經理",
+  "monthly_salary": 42000,
+  "shift_mode": "晚",
+  "rest_weekday": 5
+ },
+ {
+  "id": "E006",
+  "name": "鄭靜君",
+  "role": "經理",
+  "monthly_salary": 41500,
+  "shift_mode": "早",
+  "rest_weekday": 6
+ },
+ {
+  "id": "E007",
+  "name": "蔡敏婷",
+  "role": "經理",
+  "monthly_salary": 40800,
+  "shift_mode": "晚",
+  "rest_weekday": 0
+ },
+ {
+  "id": "E008",
+  "name": "王偉明",
+  "role": "經理",
+  "monthly_salary": 53000,
+  "shift_mode": "夜",
+  "rest_weekday": 1
+ },
+ {
+  "id": "E009",
+  "name": "謝國浩",
+  "role": "主任",
+  "monthly_salary": 32800,
+  "shift_mode": "早",
+  "rest_weekday": 2
+ },
+ {
+  "id": "E010",
+  "name": "梁麗明",
+  "role": "主任",
+  "monthly_salary": 32100,
+  "shift_mode": "夜",
+  "rest_weekday": 3
+ },
+ {
+  "id": "E011",
+  "name": "梁淑賢",
+  "role": "主任",
+  "monthly_salary": 26200,
+  "shift_mode": "早",
+  "rest_weekday": 4
+ },
+ {
+  "id": "E012",
+  "name": "謝文軍",
+  "role": "主任",
+  "monthly_salary": 32200,
+  "shift_mode": "rotating",
+  "rest_weekday": 5
+ },
+ {
+  "id": "E013",
+  "name": "黃國珊",
+  "role": "主任",
+  "monthly_salary": 29600,
+  "shift_mode": "夜",
+  "rest_weekday": 6
+ },
+ {
+  "id": "E014",
+  "name": "張俊鳳",
+  "role": "主任",
+  "monthly_salary": 35200,
+  "shift_mode": "rotating",
+  "rest_weekday": 0
+ },
+ {
+  "id": "E015",
+  "name": "羅偉豪",
+  "role": "主任",
+  "monthly_salary": 34000,
+  "shift_mode": "夜",
+  "rest_weekday": 1
+ },
+ {
+  "id": "E016",
+  "name": "羅建華",
+  "role": "主任",
+  "monthly_salary": 34600,
+  "shift_mode": "早",
+  "rest_weekday": 2
+ },
+ {
+  "id": "E017",
+  "name": "鄭嘉英",
+  "role": "主任",
+  "monthly_salary": 27600,
+  "shift_mode": "rotating",
+  "rest_weekday": 3
+ },
+ {
+  "id": "E018",
+  "name": "張靜浩",
+  "role": "主任",
+  "monthly_salary": 29400,
+  "shift_mode": "晚",
+  "rest_weekday": 4
+ },
+ {
+  "id": "E019",
+  "name": "謝子豪",
+  "role": "主任",
+  "monthly_salary": 34000,
+  "shift_mode": "rotating",
+  "rest_weekday": 5
+ },
+ {
+  "id": "E020",
+  "name": "蔡偉傑",
+  "role": "主任",
+  "monthly_salary": 31600,
+  "shift_mode": "晚",
+  "rest_weekday": 6
+ },
+ {
+  "id": "E021",
+  "name": "陳永明",
+  "role": "主任",
+  "monthly_salary": 35400,
+  "shift_mode": "rotating",
+  "rest_weekday": 0
+ },
+ {
+  "id": "E022",
+  "name": "何敏龍",
+  "role": "主任",
+  "monthly_salary": 35200,
+  "shift_mode": "rotating",
+  "rest_weekday": 1
+ },
+ {
+  "id": "E023",
+  "name": "黃家怡",
+  "role": "主任",
+  "monthly_salary": 34700,
+  "shift_mode": "早",
+  "rest_weekday": 2
+ },
+ {
+  "id": "E024",
+  "name": "鍾淑浩",
+  "role": "職員",
+  "monthly_salary": 21300,
+  "shift_mode": "晚",
+  "rest_weekday": 3
+ },
+ {
+  "id": "E025",
+  "name": "郭嘉賢",
+  "role": "職員",
+  "monthly_salary": 16100,
+  "shift_mode": "晚",
+  "rest_weekday": 4
+ },
+ {
+  "id": "E026",
+  "name": "吳建怡",
+  "role": "職員",
+  "monthly_salary": 15600,
+  "shift_mode": "晚",
+  "rest_weekday": 5
+ },
+ {
+  "id": "E027",
+  "name": "梁家婷",
+  "role": "職員",
+  "monthly_salary": 15500,
+  "shift_mode": "rotating",
+  "rest_weekday": 6
+ },
+ {
+  "id": "E028",
+  "name": "梁家明",
+  "role": "職員",
+  "monthly_salary": 23200,
+  "shift_mode": "rotating",
+  "rest_weekday": 0
+ },
+ {
+  "id": "E029",
+  "name": "曾思欣",
+  "role": "職員",
+  "monthly_salary": 20700,
+  "shift_mode": "早",
+  "rest_weekday": 1
+ },
+ {
+  "id": "E030",
+  "name": "吳子君",
+  "role": "職員",
+  "monthly_salary": 21400,
+  "shift_mode": "早",
+  "rest_weekday": 2
+ },
+ {
+  "id": "E031",
+  "name": "羅佩珊",
+  "role": "職員",
+  "monthly_salary": 22800,
+  "shift_mode": "早",
+  "rest_weekday": 3
+ },
+ {
+  "id": "E032",
+  "name": "曾佩婷",
+  "role": "職員",
+  "monthly_salary": 22200,
+  "shift_mode": "夜",
+  "rest_weekday": 4
+ },
+ {
+  "id": "E033",
+  "name": "鄭文英",
+  "role": "職員",
+  "monthly_salary": 19000,
+  "shift_mode": "早",
+  "rest_weekday": 5
+ },
+ {
+  "id": "E034",
+  "name": "何健儀",
+  "role": "職員",
+  "monthly_salary": 21100,
+  "shift_mode": "rotating",
+  "rest_weekday": 6
+ },
+ {
+  "id": "E035",
+  "name": "張佩浩",
+  "role": "職員",
+  "monthly_salary": 17900,
+  "shift_mode": "早",
+  "rest_weekday": 0
+ },
+ {
+  "id": "E036",
+  "name": "吳俊怡",
+  "role": "職員",
+  "monthly_salary": 18400,
+  "shift_mode": "rotating",
+  "rest_weekday": 1
+ },
+ {
+  "id": "E037",
+  "name": "楊健婷",
+  "role": "職員",
+  "monthly_salary": 21000,
+  "shift_mode": "晚",
+  "rest_weekday": 2
+ },
+ {
+  "id": "E038",
+  "name": "鍾敏珊",
+  "role": "職員",
+  "monthly_salary": 19900,
+  "shift_mode": "rotating",
+  "rest_weekday": 3
+ },
+ {
+  "id": "E039",
+  "name": "梁嘉君",
+  "role": "職員",
+  "monthly_salary": 20900,
+  "shift_mode": "夜",
+  "rest_weekday": 4
+ },
+ {
+  "id": "E040",
+  "name": "何健婷",
+  "role": "職員",
+  "monthly_salary": 21500,
+  "shift_mode": "早",
+  "rest_weekday": 5
+ },
+ {
+  "id": "E041",
+  "name": "黃永英",
+  "role": "職員",
+  "monthly_salary": 19500,
+  "shift_mode": "夜",
+  "rest_weekday": 6
+ },
+ {
+  "id": "E042",
+  "name": "吳子怡",
+  "role": "職員",
+  "monthly_salary": 16000,
+  "shift_mode": "夜",
+  "rest_weekday": 0
+ },
+ {
+  "id": "E043",
+  "name": "羅芳強",
+  "role": "職員",
+  "monthly_salary": 15500,
+  "shift_mode": "rotating",
+  "rest_weekday": 1
+ },
+ {
+  "id": "E044",
+  "name": "鄭偉英",
+  "role": "職員",
+  "monthly_salary": 15500,
+  "shift_mode": "早",
+  "rest_weekday": 2
+ },
+ {
+  "id": "E045",
+  "name": "蕭子峰",
+  "role": "職員",
+  "monthly_salary": 17000,
+  "shift_mode": "rotating",
+  "rest_weekday": 3
+ },
+ {
+  "id": "E046",
+  "name": "羅偉軍",
+  "role": "職員",
+  "monthly_salary": 22600,
+  "shift_mode": "晚",
+  "rest_weekday": 4
+ },
+ {
+  "id": "E047",
+  "name": "蕭國峰",
+  "role": "職員",
+  "monthly_salary": 19300,
+  "shift_mode": "rotating",
+  "rest_weekday": 5
+ },
+ {
+  "id": "E048",
+  "name": "郭家浩",
+  "role": "職員",
+  "monthly_salary": 21000,
+  "shift_mode": "夜",
+  "rest_weekday": 6
+ },
+ {
+  "id": "E049",
+  "name": "林敏婷",
+  "role": "職員",
+  "monthly_salary": 20800,
+  "shift_mode": "早",
+  "rest_weekday": 0
+ },
+ {
+  "id": "E050",
+  "name": "謝子珊",
+  "role": "職員",
+  "monthly_salary": 17700,
+  "shift_mode": "夜",
+  "rest_weekday": 1
+ },
+ {
+  "id": "E051",
+  "name": "陳國華",
+  "role": "職員",
+  "monthly_salary": 19600,
+  "shift_mode": "早",
+  "rest_weekday": 2
+ },
+ {
+  "id": "E052",
+  "name": "黃麗豪",
+  "role": "職員",
+  "monthly_salary": 21000,
+  "shift_mode": "rotating",
+  "rest_weekday": 3
+ },
+ {
+  "id": "E053",
+  "name": "羅靜明",
+  "role": "職員",
+  "monthly_salary": 19900,
+  "shift_mode": "rotating",
+  "rest_weekday": 4
+ },
+ {
+  "id": "E054",
+  "name": "張麗豪",
+  "role": "職員",
+  "monthly_salary": 22500,
+  "shift_mode": "晚",
+  "rest_weekday": 5
+ },
+ {
+  "id": "E055",
+  "name": "蕭家欣",
+  "role": "職員",
+  "monthly_salary": 18400,
+  "shift_mode": "rotating",
+  "rest_weekday": 6
+ },
+ {
+  "id": "E056",
+  "name": "鄭家雯",
+  "role": "職員",
+  "monthly_salary": 23400,
+  "shift_mode": "晚",
+  "rest_weekday": 0
+ },
+ {
+  "id": "E057",
+  "name": "李建豪",
+  "role": "職員",
+  "monthly_salary": 21000,
+  "shift_mode": "rotating",
+  "rest_weekday": 1
+ },
+ {
+  "id": "E058",
+  "name": "郭美明",
+  "role": "職員",
+  "monthly_salary": 19400,
+  "shift_mode": "夜",
+  "rest_weekday": 2
+ },
+ {
+  "id": "E059",
+  "name": "鍾國雯",
+  "role": "職員",
+  "monthly_salary": 20600,
+  "shift_mode": "rotating",
+  "rest_weekday": 3
+ },
+ {
+  "id": "E060",
+  "name": "鍾家珊",
+  "role": "職員",
+  "monthly_salary": 17100,
+  "shift_mode": "rotating",
+  "rest_weekday": 4
+ },
+ {
+  "id": "E061",
+  "name": "陳美浩",
+  "role": "職員",
+  "monthly_salary": 19100,
+  "shift_mode": "rotating",
+  "rest_weekday": 5
+ },
+ {
+  "id": "E062",
+  "name": "楊國峰",
+  "role": "職員",
+  "monthly_salary": 15400,
+  "shift_mode": "夜",
+  "rest_weekday": 6
+ },
+ {
+  "id": "E063",
+  "name": "蕭俊賢",
+  "role": "職員",
+  "monthly_salary": 20500,
+  "shift_mode": "rotating",
+  "rest_weekday": 0
+ },
+ {
+  "id": "E064",
+  "name": "何國雯",
+  "role": "職員",
+  "monthly_salary": 22500,
+  "shift_mode": "晚",
+  "rest_weekday": 1
+ },
+ {
+  "id": "E065",
+  "name": "王文珊",
+  "role": "職員",
+  "monthly_salary": 21900,
+  "shift_mode": "rotating",
+  "rest_weekday": 2
+ },
+ {
+  "id": "E066",
+  "name": "鄭嘉賢",
+  "role": "職員",
+  "monthly_salary": 19900,
+  "shift_mode": "rotating",
+  "rest_weekday": 3
+ },
+ {
+  "id": "E067",
+  "name": "何偉傑",
+  "role": "職員",
+  "monthly_salary": 20100,
+  "shift_mode": "晚",
+  "rest_weekday": 4
+ },
+ {
+  "id": "E068",
+  "name": "鄭芳怡",
+  "role": "職員",
+  "monthly_salary": 20000,
+  "shift_mode": "早",
+  "rest_weekday": 5
+ },
+ {
+  "id": "E069",
+  "name": "吳美龍",
+  "role": "助理",
+  "monthly_salary": 14400,
+  "shift_mode": "rotating",
+  "rest_weekday": 6
+ },
+ {
+  "id": "E070",
+  "name": "蕭家君",
+  "role": "助理",
+  "monthly_salary": 15500,
+  "shift_mode": "rotating",
+  "rest_weekday": 0
+ },
+ {
+  "id": "E071",
+  "name": "謝佩明",
+  "role": "助理",
+  "monthly_salary": 12700,
+  "shift_mode": "rotating",
+  "rest_weekday": 1
+ },
+ {
+  "id": "E072",
+  "name": "鍾曉珊",
+  "role": "助理",
+  "monthly_salary": 14400,
+  "shift_mode": "rotating",
+  "rest_weekday": 2
+ },
+ {
+  "id": "E073",
+  "name": "林敏傑",
+  "role": "助理",
+  "monthly_salary": 14300,
+  "shift_mode": "rotating",
+  "rest_weekday": 3
+ },
+ {
+  "id": "E074",
+  "name": "鄭麗玲",
+  "role": "助理",
+  "monthly_salary": 15400,
+  "shift_mode": "rotating",
+  "rest_weekday": 4
+ },
+ {
+  "id": "E075",
+  "name": "蔡嘉欣",
+  "role": "助理",
+  "monthly_salary": 14000,
+  "shift_mode": "rotating",
+  "rest_weekday": 5
+ },
+ {
+  "id": "E076",
+  "name": "陳思欣",
+  "role": "助理",
+  "monthly_salary": 14900,
+  "shift_mode": "rotating",
+  "rest_weekday": 6
+ },
+ {
+  "id": "E077",
+  "name": "楊思英",
+  "role": "助理",
+  "monthly_salary": 12300,
+  "shift_mode": "rotating",
+  "rest_weekday": 0
+ },
+ {
+  "id": "E078",
+  "name": "王永英",
+  "role": "助理",
+  "monthly_salary": 14700,
+  "shift_mode": "rotating",
+  "rest_weekday": 1
+ },
+ {
+  "id": "E079",
+  "name": "鄭敏鳳",
+  "role": "助理",
+  "monthly_salary": 14500,
+  "shift_mode": "rotating",
+  "rest_weekday": 2
+ },
+ {
+  "id": "E080",
+  "name": "何永玲",
+  "role": "助理",
+  "monthly_salary": 14000,
+  "shift_mode": "晚",
+  "rest_weekday": 3
+ },
+ {
+  "id": "E081",
+  "name": "蕭俊賢",
+  "role": "助理",
+  "monthly_salary": 14100,
+  "shift_mode": "rotating",
+  "rest_weekday": 4
+ },
+ {
+  "id": "E082",
+  "name": "吳靜明",
+  "role": "助理",
+  "monthly_salary": 14000,
+  "shift_mode": "rotating",
+  "rest_weekday": 5
+ },
+ {
+  "id": "E083",
+  "name": "羅芳峰",
+  "role": "助理",
+  "monthly_salary": 16000,
+  "shift_mode": "rotating",
+  "rest_weekday": 6
+ },
+ {
+  "id": "E084",
+  "name": "許敏欣",
+  "role": "助理",
+  "monthly_salary": 14700,
+  "shift_mode": "rotating",
+  "rest_weekday": 0
+ },
+ {
+  "id": "E085",
+  "name": "蔡佩珊",
+  "role": "助理",
+  "monthly_salary": 14500,
+  "shift_mode": "晚",
+  "rest_weekday": 1
+ },
+ {
+  "id": "E086",
+  "name": "蕭偉軍",
+  "role": "助理",
+  "monthly_salary": 14900,
+  "shift_mode": "rotating",
+  "rest_weekday": 2
+ },
+ {
+  "id": "E087",
+  "name": "鄭曉玲",
+  "role": "助理",
+  "monthly_salary": 15800,
+  "shift_mode": "rotating",
+  "rest_weekday": 3
+ },
+ {
+  "id": "E088",
+  "name": "王健賢",
+  "role": "助理",
+  "monthly_salary": 14000,
+  "shift_mode": "rotating",
+  "rest_weekday": 4
+ },
+ {
+  "id": "E089",
+  "name": "陳國浩",
+  "role": "助理",
+  "monthly_salary": 14400,
+  "shift_mode": "rotating",
+  "rest_weekday": 5
+ },
+ {
+  "id": "E090",
+  "name": "蔡永鳳",
+  "role": "助理",
+  "monthly_salary": 14900,
+  "shift_mode": "rotating",
+  "rest_weekday": 6
+ },
+ {
+  "id": "E091",
+  "name": "何佩雯",
+  "role": "助理",
+  "monthly_salary": 12800,
+  "shift_mode": "rotating",
+  "rest_weekday": 0
+ },
+ {
+  "id": "E092",
+  "name": "張芳鳳",
+  "role": "助理",
+  "monthly_salary": 14900,
+  "shift_mode": "rotating",
+  "rest_weekday": 1
+ },
+ {
+  "id": "E093",
+  "name": "羅思君",
+  "role": "助理",
+  "monthly_salary": 13600,
+  "shift_mode": "rotating",
+  "rest_weekday": 2
+ },
+ {
+  "id": "E094",
+  "name": "王志雯",
+  "role": "助理",
+  "monthly_salary": 14100,
+  "shift_mode": "rotating",
+  "rest_weekday": 3
+ },
+ {
+  "id": "E095",
+  "name": "劉文君",
+  "role": "助理",
+  "monthly_salary": 12200,
+  "shift_mode": "晚",
+  "rest_weekday": 4
+ },
+ {
+  "id": "E096",
+  "name": "何麗峰",
+  "role": "助理",
+  "monthly_salary": 14700,
+  "shift_mode": "晚",
+  "rest_weekday": 5
+ },
+ {
+  "id": "E097",
+  "name": "曾健玲",
+  "role": "助理",
+  "monthly_salary": 13900,
+  "shift_mode": "rotating",
+  "rest_weekday": 6
+ },
+ {
+  "id": "E098",
+  "name": "羅志華",
+  "role": "助理",
+  "monthly_salary": 13300,
+  "shift_mode": "rotating",
+  "rest_weekday": 0
+ },
+ {
+  "id": "E099",
+  "name": "陳敏峰",
+  "role": "助理",
+  "monthly_salary": 15100,
+  "shift_mode": "rotating",
+  "rest_weekday": 1
+ },
+ {
+  "id": "E100",
+  "name": "許偉儀",
+  "role": "助理",
+  "monthly_salary": 12100,
+  "shift_mode": "晚",
+  "rest_weekday": 2
+ }
+]
