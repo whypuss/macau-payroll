@@ -11,7 +11,8 @@
 | `simulate.py` | 模擬 100 員工 × 2026年9月: 輪更、打卡、年假/病假/無薪假 |
 | `payslip.py` | 糧單計算: 出勤記錄 → 應稅工資 → 稅 → 實發 |
 | `test_payroll.py` | 13 tests: 稅制 (預期值人手按官方稅表計出) |
-| `test_payslip.py` | 27 tests: 人手糧單個案 + 年假額度 + 社保 + 法定假日工作/颱風 + 100 人模擬不變量 |
+| `report.py` | HR 報表: 計糧 + 輸出 payslips_2026-09.csv (Excel 開到) |
+| `test_payslip.py` | 28 tests: 人手糧單個案 + 年假額度 + 社保 + 法定假日工作/颱風 + 報表 + 100 人模擬不變量 |
 | `data/` | 模擬數據 (employees.json, records.json, 供檢查) |
 
 ## 完整流程
@@ -20,7 +21,8 @@
 cd ~/workspace/skills/macau-payroll
 python3 simulate.py          # 生成 100 人模擬數據 → data/
 python3 test_payroll.py      # 13 tests, 稅制
-python3 test_payslip.py      # 27 tests, 糧單
+python3 report.py             # 計糧 + 輸出 CSV
+python3 test_payslip.py      # 28 tests, 糧單
 ```
 
 ```python
@@ -100,7 +102,7 @@ slip = compute_payslip(employees[0], records["E001"])
 
 ## 驗證紀律 (重要)
 
-- 計算正確性由兩個 test files 共 40 個 tests 保證, 唔係由 AI「睇過」保證。
+- 計算正確性由兩個 test files 共 41 個 tests 保證, 唔係由 AI「睇過」保證。
 - 人手個案的預期值全部人手計出, 非生成; 模擬不變量驗證會計恆等式
   (實發+稅+扣款 == 月薪+津貼+加班費)、非負、扣款公式、確定性。
 - 改動任何計算代碼或參數後, 必須兩個 test files 全部 PASS 先算完成。

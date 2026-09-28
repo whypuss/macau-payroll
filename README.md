@@ -8,7 +8,8 @@
 ```bash
 python3 simulate.py      # 生成 100 人 × 2026年9月 模擬數據 → data/
 python3 test_payroll.py  # 13 tests：職業稅制
-python3 test_payslip.py  # 27 tests：糧單個案 + 年假額度 + 社保 + 法定假日工作/颱風 + 模擬不變量
+python3 report.py  # 計糧 + 輸出 CSV (Excel 開到)
+python3 test_payslip.py  # 28 tests：糧單個案 + 年假額度 + 社保 + 法定假日工作/颱風 + 報表 + 模擬不變量
 ```
 
 ```python
@@ -96,7 +97,7 @@ slip = compute_payslip(employees[0], records["E001"])
 
 ## 驗證紀律
 
-- 計算正確性由兩個 test files 共 40 個 tests 保證，唔係由 AI「睇過」保證。
+- 計算正確性由兩個 test files 共 41 個 tests 保證，唔係由 AI「睇過」保證。
 - 人手個案的預期值全部人手計出，非生成；模擬不變量驗證會計恆等式
   （實發＋稅＋扣款 == 月薪＋津貼＋加班費）、非負、扣款公式、確定性。
 - 改動任何計算代碼或參數後，必須兩個 test files 全部 PASS 先算完成。

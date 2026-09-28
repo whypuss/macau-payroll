@@ -1,0 +1,36 @@
+macau-payroll 使用說明 (公司受限電腦適用)
+==========================================
+
+呢個包唔使安裝、唔使管理員權限、唔使上網、唔使 pip。
+全部只用 Python 標準庫, 公司電腦一般擋唔到。
+
+
+1. 將成個資料夾 copy 入公司電腦 (USB / 內網 / email 附件都得)
+2. 雙擊 RUN.bat
+3. 完成後會產生 payslips_2026-09.csv, Excel 直接開到 (中文已處理好)
+4. 想驗證計算正確: 開 cmd, 打 py test_payslip.py
+應顯示 27 tests passed (另加 test_payroll.py 13 tests)
+
+
+1. 喺有權限嘅電腦去 python.org 下載 "Windows embeddable package (64-bit)"
+(係一個 zip, 解壓即用, 唔使安裝)
+2. 將佢解壓到呢個資料夾入面 (同 report.py 同一層, 會見到 python.exe)
+3. 將成個資料夾 copy 入公司電腦, 雙擊 RUN.bat 即可
+
+
+- 而家預設係模擬 100 人 2026年9月 數據 (seed 固定, 次次一樣)
+- 真實出糧: 將 data/records.json 換成真實打卡記錄 (格式照舊),
+data/employees.json 換成真實員工資料, 再跑 RUN.bat
+- 記錄類型: work / annual / sick / nopay / absent /
+holiday_work / restday_work / typhoon_work / comp_leave
+- 颱風參數 (payslip.py 頂部): TYPHOON_EXTRA_MULT、TYPHOON_ALLOWANCE
+按公司政策修改; 法定假日倍數唔好亂改
+
+
+payroll.py 職業稅制
+payslip.py 糧單計算 (核心)
+simulate.py 模擬數據
+report.py 計糧 + 輸出 CSV
+test_*.py 測試 (40 個)
+RUN.bat 一鍵執行 (Windows)
+data/ 模擬員工 + 記錄

@@ -334,6 +334,16 @@ def test_simulation_holiday_and_restday_work():
         assert abs(s["restday_work_extra"] - s["restday_work_days"] * daily * 1.0) < 0.02
 
 
+def test_report_csv_rows():
+    # report.py 輸出 100 行, 實發合計同 totals 一致
+    from report import build_rows, FLAT_KEYS
+    employees, records = generate()
+    rows, totals = build_rows(employees, records)
+    assert len(rows) == 100
+    assert all(set(FLAT_KEYS) <= set(r) for r in rows)
+    assert abs(sum(r["net_pay"] for r in rows) - totals["total_net"]) < 0.02
+
+
 if __name__ == "__main__":
     tests = [v for k, v in sorted(globals().items()) if k.startswith("test_")]
     for t in tests:
