@@ -2,6 +2,9 @@
 
 A) 人手個案: 捏造出勤記錄, 預期值全部人手計出。
 B) 100 人模擬不變量: 會計恆等式、非負、扣款公式、確定性。
+C) 年假額度: 職位基本額、入職當年按比例、超出轉無薪假。
+D) 社保供款: 僱員 30 稅後代扣、僱主 60 公司成本。
+E) 法定假日工作 / 颱風: 三工、雙工、補假選項、颱風公司政策。
 """
 from payslip import compute_payslip, payroll_run
 from payroll import monthly_withholding
@@ -95,11 +98,14 @@ def test_headcount():
 
 
 def test_accounting_identity():
-    # 實發 + 稅 + 扣款 == 月薪 + 津貼 + 加班費 (每人)
+    # 實發 + 稅 + 扣款 == 月薪 + 各項津貼/額外報酬 (每人)
     slips, _ = _run()
     for s in slips:
         lhs = round(s["net_pay"] + s["tax_withheld"] + s["deductions"]["total"], 2)
-        rhs = round(s["monthly_salary"] + s["night_allowance"] + s["overtime_pay"], 2)
+        rhs = round(s["monthly_salary"] + s["night_allowance"]
+                    + s["overtime_pay"] + s["holiday_work_extra"]
+                    + s["restday_work_extra"] + s["typhoon_work_extra"]
+                    + s["typhoon_allowance"], 2)
         assert abs(lhs - rhs) < 0.02, s["id"]
 
 
@@ -237,6 +243,95 @@ def test_simulation_fss_totals():
     assert totals["total_fss_employee"] == 3000.0
     assert totals["total_fss_employer"] == 6000.0
     assert all(s["deductions"]["social_security"] == 30.0 for s in slips)
+
+
+# ---------- E) 法定假日工作 / 颱風 ----------
+
+def test_holiday_work_triple():
+    # 月薪 30,000 (日薪 1,000): 強制性假日工作 1 天 → 額外 2,000 (三工: 月薪已含當日)
+    # 應稅 32,000 → 稅 1,365 → 實發 32,000 - 1,365 - 30 = 30,605
+    recs = [dict(work(day=1), type="holiday_work")]
+    s = compute_payslip(mkemp(30000), recs)
+    assert s["holiday_work_days"] == 1
+    assert s["holiday_work_extra"] == 2000.0
+    assert s["taxable_income"] == 32000.0
+    assert s["tax_withheld"] == 1365.0
+    assert s["net_pay"] == 30605.0
+
+
+def test_holiday_work_comp_leave_option():
+    # 強制性假日工作選補假: 額外只計 1× 日薪, 另欠有薪補假 1 日
+    # 應稅 31,000 → 稅 1,288 → 實發 31,000 - 1,288 - 30 = 29,682
+    recs = [dict(work(day=1), type="holiday_work", comp_leave=True)]
+    s = compute_payslip(mkemp(30000), recs)
+    assert s["holiday_work_extra"] == 1000.0
+    assert s["comp_leave_owed_days"] == 1
+    assert s["taxable_income"] == 31000.0
+    assert s["tax_withheld"] == 1288.0
+    assert s["net_pay"] == 29682.0
+
+
+def test_restday_work_double():
+    # 週假工作 1 天 → 額外 1,000 (雙工); 應稅 31,000 → 稅 1,288 → 實發 29,682
+    recs = [dict(work(day=1), type="restday_work")]
+    s = compute_payslip(mkemp(30000), recs)
+    assert s["restday_work_days"] == 1
+    assert s["restday_work_extra"] == 1000.0
+    assert s["taxable_income"] == 31000.0
+    assert s["tax_withheld"] == 1288.0
+    assert s["net_pay"] == 29682.0
+
+
+def test_restday_work_comp_leave_option():
+    # 週假工作選補休: 額外現金 0, 欠有薪補假 1 日; 應稅 30,000 → 稅 1,211
+    recs = [dict(work(day=1), type="restday_work", comp_leave=True)]
+    s = compute_payslip(mkemp(30000), recs)
+    assert s["restday_work_extra"] == 0.0
+    assert s["comp_leave_owed_days"] == 1
+    assert s["net_pay"] == 28759.0
+
+
+def test_comp_leave_is_paid():
+    # 補假日: 有薪不扣; 之後唔再欠補假
+    recs = [dict(work(day=1), type="holiday_work", comp_leave=True),
+            {"date": "2026-09-02", "shift": "早", "type": "comp_leave",
+             "cert": True, "late_min": 0.0, "ot_hours": 0.0}]
+    s = compute_payslip(mkemp(30000), recs)
+    assert s["comp_leave_days"] == 1
+    assert s["comp_leave_owed_days"] == 0
+    assert s["taxable_income"] == 31000.0
+    assert s["net_pay"] == 29682.0
+
+
+def test_typhoon_work_policy():
+    # 颱風期間工作 1 天 (公司政策: 額外 1× 日薪 + 定額津貼 500/日)
+    # 應稅 31,500 → 稅 1,326.5 → 實發 31,500 - 1,326.5 - 30 = 30,143.5
+    import payslip
+    old = payslip.TYPHOON_ALLOWANCE
+    payslip.TYPHOON_ALLOWANCE = 500.0
+    try:
+        recs = [dict(work(day=1), type="typhoon_work")]
+        s = compute_payslip(mkemp(30000), recs)
+        assert s["typhoon_work_days"] == 1
+        assert s["typhoon_work_extra"] == 1000.0
+        assert s["typhoon_allowance"] == 500.0
+        assert s["taxable_income"] == 31500.0
+        assert s["tax_withheld"] == 1326.5
+        assert s["net_pay"] == 30143.5
+    finally:
+        payslip.TYPHOON_ALLOWANCE = old
+
+
+def test_simulation_holiday_and_restday_work():
+    # 2026-09-26 (中秋節翌日) 有員工計三工; 週假工作有雙工記錄
+    slips, totals = _run()
+    assert totals["total_holiday_work_extra"] > 0
+    assert any(s["holiday_work_days"] > 0 for s in slips)
+    assert any(s["restday_work_days"] > 0 for s in slips)
+    for s in slips:
+        daily = s["monthly_salary"] / 30.0
+        assert abs(s["holiday_work_extra"] - s["holiday_work_days"] * daily * 2.0) < 0.02
+        assert abs(s["restday_work_extra"] - s["restday_work_days"] * daily * 1.0) < 0.02
 
 
 if __name__ == "__main__":

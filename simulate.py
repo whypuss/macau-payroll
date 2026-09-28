@@ -15,6 +15,9 @@
 - 遲到: 5 分鐘寬限, 之後按分鐘扣 (時薪/60)
 - 夜更津貼: MOP 80 / 更
 - 加班: 收工超時按 1.5 倍時薪計
+- 強制性假日工作 (2026-09-26 中秋節翌日): 三工 (月薪已含當日, 額外 2× 日薪)
+- 週假工作: 雙工 (月薪已含當日, 額外 1× 日薪)
+- 颱風工作: 無法定倍數, 屬公司政策, 模擬中不設 (記錄類型 typhoon_work 由公司提供)
 """
 import json
 import os
@@ -54,6 +57,10 @@ def annual_entitlement(join_date, role, special_extra=0):
 SHIFT_NAMES = ["早", "晚", "夜"]
 # 上班/收工時間 (分鐘, 由 00:00 起計)
 SHIFT_TIME = {"早": (480, 960), "晚": (960, 1440), "夜": (0, 480)}
+
+
+# 2026-09-26 (星期六) = 中秋節翌日, 強制性假日 (第7/2008號法律)
+MANDATORY_HOLIDAY = f"{YEAR}-{MONTH:02d}-26"
 
 
 def generate(seed=SEED):
@@ -145,6 +152,29 @@ def generate(seed=SEED):
             recs.append({"date": f"{YEAR}-{MONTH:02d}-{d:02d}",
                          "shift": shift, "type": "work", "cert": True,
                          "late_min": late_min, "ot_hours": ot_hours})
+
+        # 強制性假日工作 (三工): 中秋節翌日, 三成半在崗員工當值
+        existing = next((r for r in recs if r["date"] == MANDATORY_HOLIDAY), None)
+        if (existing is None or existing["type"] == "work") and rng.random() < 0.35:
+            shift = shift_of(26)
+            hw = {"date": MANDATORY_HOLIDAY, "shift": shift,
+                  "type": "holiday_work", "cert": True,
+                  "late_min": 0.0, "ot_hours": 0.0, "comp_leave": False}
+            if existing is None:
+                recs.append(hw)
+            else:
+                recs[recs.index(existing)] = hw
+
+        # 週假工作 (雙工): 每個休息日小概率當值
+        for d in range(1, DAYS_IN_MONTH + 1):
+            if date(YEAR, MONTH, d).weekday() != emp["rest_weekday"]:
+                continue
+            if rng.random() < 0.06:
+                recs.append({"date": f"{YEAR}-{MONTH:02d}-{d:02d}",
+                             "shift": shift_of(d), "type": "restday_work",
+                             "cert": True, "late_min": 0.0, "ot_hours": 0.0,
+                             "comp_leave": False})
+
         records[emp["id"]] = recs
 
     return employees, records

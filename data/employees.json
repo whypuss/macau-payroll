@@ -5,798 +5,1098 @@
   "role": "經理",
   "monthly_salary": 41600,
   "shift_mode": "rotating",
-  "rest_weekday": 1
+  "rest_weekday": 1,
+  "join_date": "2021-10-01",
+  "annual_leave_entitlement": 15,
+  "annual_leave_special_extra": 0
  },
  {
   "id": "E002",
-  "name": "曾曉君",
+  "name": "鄭國華",
   "role": "經理",
-  "monthly_salary": 41300,
-  "shift_mode": "夜",
-  "rest_weekday": 2
+  "monthly_salary": 45900,
+  "shift_mode": "rotating",
+  "rest_weekday": 2,
+  "join_date": "2024-10-01",
+  "annual_leave_entitlement": 15,
+  "annual_leave_special_extra": 0
  },
  {
   "id": "E003",
-  "name": "林建明",
+  "name": "蕭敏華",
   "role": "經理",
-  "monthly_salary": 42400,
+  "monthly_salary": 53600,
   "shift_mode": "夜",
-  "rest_weekday": 3
+  "rest_weekday": 3,
+  "join_date": "2022-11-01",
+  "annual_leave_entitlement": 15,
+  "annual_leave_special_extra": 0
  },
  {
   "id": "E004",
-  "name": "梁國英",
+  "name": "許文軍",
   "role": "經理",
-  "monthly_salary": 39000,
-  "shift_mode": "rotating",
-  "rest_weekday": 4
+  "monthly_salary": 48600,
+  "shift_mode": "早",
+  "rest_weekday": 4,
+  "join_date": "2025-02-01",
+  "annual_leave_entitlement": 15,
+  "annual_leave_special_extra": 0
  },
  {
   "id": "E005",
-  "name": "楊美明",
+  "name": "謝子賢",
   "role": "經理",
-  "monthly_salary": 42000,
-  "shift_mode": "晚",
-  "rest_weekday": 5
+  "monthly_salary": 38000,
+  "shift_mode": "夜",
+  "rest_weekday": 5,
+  "join_date": "2021-09-01",
+  "annual_leave_entitlement": 15,
+  "annual_leave_special_extra": 0
  },
  {
   "id": "E006",
-  "name": "鄭靜君",
+  "name": "林麗浩",
   "role": "經理",
-  "monthly_salary": 41500,
-  "shift_mode": "早",
-  "rest_weekday": 6
+  "monthly_salary": 51300,
+  "shift_mode": "rotating",
+  "rest_weekday": 6,
+  "join_date": "2022-12-01",
+  "annual_leave_entitlement": 15,
+  "annual_leave_special_extra": 0
  },
  {
   "id": "E007",
-  "name": "蔡敏婷",
+  "name": "梁淑賢",
   "role": "經理",
-  "monthly_salary": 40800,
-  "shift_mode": "晚",
-  "rest_weekday": 0
+  "monthly_salary": 38300,
+  "shift_mode": "早",
+  "rest_weekday": 0,
+  "join_date": "2020-10-01",
+  "annual_leave_entitlement": 15,
+  "annual_leave_special_extra": 0
  },
  {
   "id": "E008",
-  "name": "王偉明",
+  "name": "黃國珊",
   "role": "經理",
-  "monthly_salary": 53000,
+  "monthly_salary": 44000,
   "shift_mode": "夜",
-  "rest_weekday": 1
+  "rest_weekday": 1,
+  "join_date": "2019-09-01",
+  "annual_leave_entitlement": 15,
+  "annual_leave_special_extra": 0
  },
  {
   "id": "E009",
-  "name": "謝國浩",
+  "name": "劉美明",
   "role": "主任",
-  "monthly_salary": 32800,
-  "shift_mode": "早",
-  "rest_weekday": 2
+  "monthly_salary": 28800,
+  "shift_mode": "rotating",
+  "rest_weekday": 2,
+  "join_date": "2025-09-01",
+  "annual_leave_entitlement": 13,
+  "annual_leave_special_extra": 0
  },
  {
   "id": "E010",
-  "name": "梁麗明",
+  "name": "林美軍",
   "role": "主任",
-  "monthly_salary": 32100,
-  "shift_mode": "夜",
-  "rest_weekday": 3
+  "monthly_salary": 33800,
+  "shift_mode": "rotating",
+  "rest_weekday": 3,
+  "join_date": "2026-03-01",
+  "annual_leave_entitlement": 11,
+  "annual_leave_special_extra": 0
  },
  {
   "id": "E011",
-  "name": "梁淑賢",
-  "role": "主任",
-  "monthly_salary": 26200,
-  "shift_mode": "早",
-  "rest_weekday": 4
- },
- {
-  "id": "E012",
-  "name": "謝文軍",
-  "role": "主任",
-  "monthly_salary": 32200,
-  "shift_mode": "rotating",
-  "rest_weekday": 5
- },
- {
-  "id": "E013",
-  "name": "黃國珊",
-  "role": "主任",
-  "monthly_salary": 29600,
-  "shift_mode": "夜",
-  "rest_weekday": 6
- },
- {
-  "id": "E014",
-  "name": "張俊鳳",
-  "role": "主任",
-  "monthly_salary": 35200,
-  "shift_mode": "rotating",
-  "rest_weekday": 0
- },
- {
-  "id": "E015",
-  "name": "羅偉豪",
-  "role": "主任",
-  "monthly_salary": 34000,
-  "shift_mode": "夜",
-  "rest_weekday": 1
- },
- {
-  "id": "E016",
-  "name": "羅建華",
-  "role": "主任",
-  "monthly_salary": 34600,
-  "shift_mode": "早",
-  "rest_weekday": 2
- },
- {
-  "id": "E017",
-  "name": "鄭嘉英",
-  "role": "主任",
-  "monthly_salary": 27600,
-  "shift_mode": "rotating",
-  "rest_weekday": 3
- },
- {
-  "id": "E018",
   "name": "張靜浩",
   "role": "主任",
   "monthly_salary": 29400,
   "shift_mode": "晚",
-  "rest_weekday": 4
+  "rest_weekday": 4,
+  "join_date": "2021-05-01",
+  "annual_leave_entitlement": 13,
+  "annual_leave_special_extra": 0
+ },
+ {
+  "id": "E012",
+  "name": "劉麗明",
+  "role": "主任",
+  "monthly_salary": 28000,
+  "shift_mode": "rotating",
+  "rest_weekday": 5,
+  "join_date": "2026-01-01",
+  "annual_leave_entitlement": 13,
+  "annual_leave_special_extra": 0
+ },
+ {
+  "id": "E013",
+  "name": "蔡志儀",
+  "role": "主任",
+  "monthly_salary": 32000,
+  "shift_mode": "rotating",
+  "rest_weekday": 6,
+  "join_date": "2025-02-01",
+  "annual_leave_entitlement": 13,
+  "annual_leave_special_extra": 0
+ },
+ {
+  "id": "E014",
+  "name": "羅偉玲",
+  "role": "主任",
+  "monthly_salary": 30800,
+  "shift_mode": "rotating",
+  "rest_weekday": 0,
+  "join_date": "2023-07-01",
+  "annual_leave_entitlement": 13,
+  "annual_leave_special_extra": 0
+ },
+ {
+  "id": "E015",
+  "name": "梁淑英",
+  "role": "主任",
+  "monthly_salary": 29800,
+  "shift_mode": "rotating",
+  "rest_weekday": 1,
+  "join_date": "2021-02-01",
+  "annual_leave_entitlement": 13,
+  "annual_leave_special_extra": 0
+ },
+ {
+  "id": "E016",
+  "name": "郭嘉怡",
+  "role": "主任",
+  "monthly_salary": 28400,
+  "shift_mode": "rotating",
+  "rest_weekday": 2,
+  "join_date": "2023-05-01",
+  "annual_leave_entitlement": 15,
+  "annual_leave_special_extra": 2
+ },
+ {
+  "id": "E017",
+  "name": "曾健雯",
+  "role": "主任",
+  "monthly_salary": 32200,
+  "shift_mode": "夜",
+  "rest_weekday": 3,
+  "join_date": "2020-11-01",
+  "annual_leave_entitlement": 13,
+  "annual_leave_special_extra": 0
+ },
+ {
+  "id": "E018",
+  "name": "何思明",
+  "role": "主任",
+  "monthly_salary": 31500,
+  "shift_mode": "rotating",
+  "rest_weekday": 4,
+  "join_date": "2024-02-01",
+  "annual_leave_entitlement": 13,
+  "annual_leave_special_extra": 0
  },
  {
   "id": "E019",
-  "name": "謝子豪",
+  "name": "蔡淑君",
   "role": "主任",
-  "monthly_salary": 34000,
+  "monthly_salary": 29400,
   "shift_mode": "rotating",
-  "rest_weekday": 5
+  "rest_weekday": 5,
+  "join_date": "2020-11-01",
+  "annual_leave_entitlement": 13,
+  "annual_leave_special_extra": 0
  },
  {
   "id": "E020",
-  "name": "蔡偉傑",
+  "name": "黃思玲",
   "role": "主任",
-  "monthly_salary": 31600,
-  "shift_mode": "晚",
-  "rest_weekday": 6
+  "monthly_salary": 29800,
+  "shift_mode": "rotating",
+  "rest_weekday": 6,
+  "join_date": "2026-08-01",
+  "annual_leave_entitlement": 5,
+  "annual_leave_special_extra": 0
  },
  {
   "id": "E021",
-  "name": "陳永明",
+  "name": "梁文玲",
   "role": "主任",
-  "monthly_salary": 35400,
+  "monthly_salary": 35600,
   "shift_mode": "rotating",
-  "rest_weekday": 0
+  "rest_weekday": 0,
+  "join_date": "2022-11-01",
+  "annual_leave_entitlement": 13,
+  "annual_leave_special_extra": 0
  },
  {
   "id": "E022",
-  "name": "何敏龍",
+  "name": "蔡淑龍",
   "role": "主任",
-  "monthly_salary": 35200,
+  "monthly_salary": 27000,
   "shift_mode": "rotating",
-  "rest_weekday": 1
+  "rest_weekday": 1,
+  "join_date": "2021-12-01",
+  "annual_leave_entitlement": 13,
+  "annual_leave_special_extra": 0
  },
  {
   "id": "E023",
-  "name": "黃家怡",
+  "name": "梁嘉君",
   "role": "主任",
-  "monthly_salary": 34700,
-  "shift_mode": "早",
-  "rest_weekday": 2
+  "monthly_salary": 32500,
+  "shift_mode": "夜",
+  "rest_weekday": 2,
+  "join_date": "2024-04-01",
+  "annual_leave_entitlement": 13,
+  "annual_leave_special_extra": 0
  },
  {
   "id": "E024",
-  "name": "鍾淑浩",
+  "name": "吳俊儀",
   "role": "職員",
-  "monthly_salary": 21300,
-  "shift_mode": "晚",
-  "rest_weekday": 3
+  "monthly_salary": 22600,
+  "shift_mode": "rotating",
+  "rest_weekday": 3,
+  "join_date": "2025-09-01",
+  "annual_leave_entitlement": 12,
+  "annual_leave_special_extra": 0
  },
  {
   "id": "E025",
-  "name": "郭嘉賢",
+  "name": "許敏賢",
   "role": "職員",
-  "monthly_salary": 16100,
-  "shift_mode": "晚",
-  "rest_weekday": 4
+  "monthly_salary": 22100,
+  "shift_mode": "夜",
+  "rest_weekday": 4,
+  "join_date": "2019-05-01",
+  "annual_leave_entitlement": 12,
+  "annual_leave_special_extra": 0
  },
  {
   "id": "E026",
-  "name": "吳建怡",
-  "role": "職員",
-  "monthly_salary": 15600,
-  "shift_mode": "晚",
-  "rest_weekday": 5
- },
- {
-  "id": "E027",
-  "name": "梁家婷",
-  "role": "職員",
-  "monthly_salary": 15500,
-  "shift_mode": "rotating",
-  "rest_weekday": 6
- },
- {
-  "id": "E028",
-  "name": "梁家明",
-  "role": "職員",
-  "monthly_salary": 23200,
-  "shift_mode": "rotating",
-  "rest_weekday": 0
- },
- {
-  "id": "E029",
-  "name": "曾思欣",
-  "role": "職員",
-  "monthly_salary": 20700,
-  "shift_mode": "早",
-  "rest_weekday": 1
- },
- {
-  "id": "E030",
-  "name": "吳子君",
-  "role": "職員",
-  "monthly_salary": 21400,
-  "shift_mode": "早",
-  "rest_weekday": 2
- },
- {
-  "id": "E031",
-  "name": "羅佩珊",
-  "role": "職員",
-  "monthly_salary": 22800,
-  "shift_mode": "早",
-  "rest_weekday": 3
- },
- {
-  "id": "E032",
-  "name": "曾佩婷",
-  "role": "職員",
-  "monthly_salary": 22200,
-  "shift_mode": "夜",
-  "rest_weekday": 4
- },
- {
-  "id": "E033",
-  "name": "鄭文英",
-  "role": "職員",
-  "monthly_salary": 19000,
-  "shift_mode": "早",
-  "rest_weekday": 5
- },
- {
-  "id": "E034",
-  "name": "何健儀",
-  "role": "職員",
-  "monthly_salary": 21100,
-  "shift_mode": "rotating",
-  "rest_weekday": 6
- },
- {
-  "id": "E035",
-  "name": "張佩浩",
-  "role": "職員",
-  "monthly_salary": 17900,
-  "shift_mode": "早",
-  "rest_weekday": 0
- },
- {
-  "id": "E036",
-  "name": "吳俊怡",
-  "role": "職員",
-  "monthly_salary": 18400,
-  "shift_mode": "rotating",
-  "rest_weekday": 1
- },
- {
-  "id": "E037",
-  "name": "楊健婷",
-  "role": "職員",
-  "monthly_salary": 21000,
-  "shift_mode": "晚",
-  "rest_weekday": 2
- },
- {
-  "id": "E038",
-  "name": "鍾敏珊",
-  "role": "職員",
-  "monthly_salary": 19900,
-  "shift_mode": "rotating",
-  "rest_weekday": 3
- },
- {
-  "id": "E039",
-  "name": "梁嘉君",
-  "role": "職員",
-  "monthly_salary": 20900,
-  "shift_mode": "夜",
-  "rest_weekday": 4
- },
- {
-  "id": "E040",
-  "name": "何健婷",
-  "role": "職員",
-  "monthly_salary": 21500,
-  "shift_mode": "早",
-  "rest_weekday": 5
- },
- {
-  "id": "E041",
-  "name": "黃永英",
-  "role": "職員",
-  "monthly_salary": 19500,
-  "shift_mode": "夜",
-  "rest_weekday": 6
- },
- {
-  "id": "E042",
-  "name": "吳子怡",
-  "role": "職員",
-  "monthly_salary": 16000,
-  "shift_mode": "夜",
-  "rest_weekday": 0
- },
- {
-  "id": "E043",
-  "name": "羅芳強",
-  "role": "職員",
-  "monthly_salary": 15500,
-  "shift_mode": "rotating",
-  "rest_weekday": 1
- },
- {
-  "id": "E044",
   "name": "鄭偉英",
   "role": "職員",
   "monthly_salary": 15500,
   "shift_mode": "早",
-  "rest_weekday": 2
+  "rest_weekday": 5,
+  "join_date": "2021-06-01",
+  "annual_leave_entitlement": 12,
+  "annual_leave_special_extra": 0
  },
  {
-  "id": "E045",
-  "name": "蕭子峰",
+  "id": "E027",
+  "name": "吳美明",
   "role": "職員",
-  "monthly_salary": 17000,
-  "shift_mode": "rotating",
-  "rest_weekday": 3
- },
- {
-  "id": "E046",
-  "name": "羅偉軍",
-  "role": "職員",
-  "monthly_salary": 22600,
+  "monthly_salary": 16600,
   "shift_mode": "晚",
-  "rest_weekday": 4
+  "rest_weekday": 6,
+  "join_date": "2026-06-01",
+  "annual_leave_entitlement": 7,
+  "annual_leave_special_extra": 0
  },
  {
-  "id": "E047",
-  "name": "蕭國峰",
+  "id": "E028",
+  "name": "蕭敏儀",
   "role": "職員",
-  "monthly_salary": 19300,
-  "shift_mode": "rotating",
-  "rest_weekday": 5
+  "monthly_salary": 17800,
+  "shift_mode": "晚",
+  "rest_weekday": 0,
+  "join_date": "2026-01-01",
+  "annual_leave_entitlement": 12,
+  "annual_leave_special_extra": 0
  },
  {
-  "id": "E048",
-  "name": "郭家浩",
-  "role": "職員",
-  "monthly_salary": 21000,
-  "shift_mode": "夜",
-  "rest_weekday": 6
- },
- {
-  "id": "E049",
-  "name": "林敏婷",
-  "role": "職員",
-  "monthly_salary": 20800,
-  "shift_mode": "早",
-  "rest_weekday": 0
- },
- {
-  "id": "E050",
-  "name": "謝子珊",
-  "role": "職員",
-  "monthly_salary": 17700,
-  "shift_mode": "夜",
-  "rest_weekday": 1
- },
- {
-  "id": "E051",
-  "name": "陳國華",
-  "role": "職員",
-  "monthly_salary": 19600,
-  "shift_mode": "早",
-  "rest_weekday": 2
- },
- {
-  "id": "E052",
-  "name": "黃麗豪",
+  "id": "E029",
+  "name": "何敏華",
   "role": "職員",
   "monthly_salary": 21000,
   "shift_mode": "rotating",
-  "rest_weekday": 3
+  "rest_weekday": 1,
+  "join_date": "2026-05-01",
+  "annual_leave_entitlement": 8,
+  "annual_leave_special_extra": 0
  },
  {
-  "id": "E053",
-  "name": "羅靜明",
+  "id": "E030",
+  "name": "楊嘉明",
   "role": "職員",
-  "monthly_salary": 19900,
-  "shift_mode": "rotating",
-  "rest_weekday": 4
+  "monthly_salary": 21900,
+  "shift_mode": "早",
+  "rest_weekday": 2,
+  "join_date": "2025-03-01",
+  "annual_leave_entitlement": 12,
+  "annual_leave_special_extra": 0
  },
  {
-  "id": "E054",
+  "id": "E031",
+  "name": "蔡子賢",
+  "role": "職員",
+  "monthly_salary": 21900,
+  "shift_mode": "夜",
+  "rest_weekday": 3,
+  "join_date": "2023-05-01",
+  "annual_leave_entitlement": 12,
+  "annual_leave_special_extra": 0
+ },
+ {
+  "id": "E032",
   "name": "張麗豪",
   "role": "職員",
   "monthly_salary": 22500,
   "shift_mode": "晚",
-  "rest_weekday": 5
+  "rest_weekday": 4,
+  "join_date": "2026-05-01",
+  "annual_leave_entitlement": 8,
+  "annual_leave_special_extra": 0
  },
  {
-  "id": "E055",
-  "name": "蕭家欣",
+  "id": "E033",
+  "name": "張美傑",
   "role": "職員",
-  "monthly_salary": 18400,
-  "shift_mode": "rotating",
-  "rest_weekday": 6
- },
- {
-  "id": "E056",
-  "name": "鄭家雯",
-  "role": "職員",
-  "monthly_salary": 23400,
+  "monthly_salary": 23200,
   "shift_mode": "晚",
-  "rest_weekday": 0
+  "rest_weekday": 5,
+  "join_date": "2025-11-01",
+  "annual_leave_entitlement": 12,
+  "annual_leave_special_extra": 0
  },
  {
-  "id": "E057",
+  "id": "E034",
   "name": "李建豪",
   "role": "職員",
   "monthly_salary": 21000,
   "shift_mode": "rotating",
-  "rest_weekday": 1
+  "rest_weekday": 6,
+  "join_date": "2026-01-01",
+  "annual_leave_entitlement": 12,
+  "annual_leave_special_extra": 0
  },
  {
-  "id": "E058",
-  "name": "郭美明",
+  "id": "E035",
+  "name": "鍾佩鳳",
   "role": "職員",
-  "monthly_salary": 19400,
-  "shift_mode": "夜",
-  "rest_weekday": 2
- },
- {
-  "id": "E059",
-  "name": "鍾國雯",
-  "role": "職員",
-  "monthly_salary": 20600,
-  "shift_mode": "rotating",
-  "rest_weekday": 3
- },
- {
-  "id": "E060",
-  "name": "鍾家珊",
-  "role": "職員",
-  "monthly_salary": 17100,
-  "shift_mode": "rotating",
-  "rest_weekday": 4
- },
- {
-  "id": "E061",
-  "name": "陳美浩",
-  "role": "職員",
-  "monthly_salary": 19100,
-  "shift_mode": "rotating",
-  "rest_weekday": 5
- },
- {
-  "id": "E062",
-  "name": "楊國峰",
-  "role": "職員",
-  "monthly_salary": 15400,
-  "shift_mode": "夜",
-  "rest_weekday": 6
- },
- {
-  "id": "E063",
-  "name": "蕭俊賢",
-  "role": "職員",
-  "monthly_salary": 20500,
-  "shift_mode": "rotating",
-  "rest_weekday": 0
- },
- {
-  "id": "E064",
-  "name": "何國雯",
-  "role": "職員",
-  "monthly_salary": 22500,
+  "monthly_salary": 22900,
   "shift_mode": "晚",
-  "rest_weekday": 1
+  "rest_weekday": 0,
+  "join_date": "2021-11-01",
+  "annual_leave_entitlement": 12,
+  "annual_leave_special_extra": 0
  },
  {
-  "id": "E065",
-  "name": "王文珊",
+  "id": "E036",
+  "name": "蔡嘉明",
+  "role": "職員",
+  "monthly_salary": 20000,
+  "shift_mode": "rotating",
+  "rest_weekday": 1,
+  "join_date": "2021-12-01",
+  "annual_leave_entitlement": 12,
+  "annual_leave_special_extra": 0
+ },
+ {
+  "id": "E037",
+  "name": "鄭芳軍",
+  "role": "職員",
+  "monthly_salary": 21700,
+  "shift_mode": "夜",
+  "rest_weekday": 2,
+  "join_date": "2026-02-01",
+  "annual_leave_entitlement": 11,
+  "annual_leave_special_extra": 0
+ },
+ {
+  "id": "E038",
+  "name": "許偉君",
+  "role": "職員",
+  "monthly_salary": 19500,
+  "shift_mode": "rotating",
+  "rest_weekday": 3,
+  "join_date": "2026-05-01",
+  "annual_leave_entitlement": 8,
+  "annual_leave_special_extra": 0
+ },
+ {
+  "id": "E039",
+  "name": "羅曉婷",
+  "role": "職員",
+  "monthly_salary": 17900,
+  "shift_mode": "rotating",
+  "rest_weekday": 4,
+  "join_date": "2024-10-01",
+  "annual_leave_entitlement": 16,
+  "annual_leave_special_extra": 4
+ },
+ {
+  "id": "E040",
+  "name": "謝文華",
+  "role": "職員",
+  "monthly_salary": 21000,
+  "shift_mode": "rotating",
+  "rest_weekday": 5,
+  "join_date": "2019-02-01",
+  "annual_leave_entitlement": 12,
+  "annual_leave_special_extra": 0
+ },
+ {
+  "id": "E041",
+  "name": "羅佩君",
+  "role": "職員",
+  "monthly_salary": 22300,
+  "shift_mode": "晚",
+  "rest_weekday": 6,
+  "join_date": "2023-05-01",
+  "annual_leave_entitlement": 12,
+  "annual_leave_special_extra": 0
+ },
+ {
+  "id": "E042",
+  "name": "鍾偉軍",
   "role": "職員",
   "monthly_salary": 21900,
   "shift_mode": "rotating",
-  "rest_weekday": 2
+  "rest_weekday": 0,
+  "join_date": "2023-10-01",
+  "annual_leave_entitlement": 12,
+  "annual_leave_special_extra": 0
+ },
+ {
+  "id": "E043",
+  "name": "鍾芳英",
+  "role": "職員",
+  "monthly_salary": 16900,
+  "shift_mode": "夜",
+  "rest_weekday": 1,
+  "join_date": "2020-03-01",
+  "annual_leave_entitlement": 12,
+  "annual_leave_special_extra": 0
+ },
+ {
+  "id": "E044",
+  "name": "蔡嘉欣",
+  "role": "職員",
+  "monthly_salary": 19600,
+  "shift_mode": "rotating",
+  "rest_weekday": 2,
+  "join_date": "2023-06-01",
+  "annual_leave_entitlement": 12,
+  "annual_leave_special_extra": 0
+ },
+ {
+  "id": "E045",
+  "name": "梁嘉豪",
+  "role": "職員",
+  "monthly_salary": 21600,
+  "shift_mode": "rotating",
+  "rest_weekday": 3,
+  "join_date": "2026-03-01",
+  "annual_leave_entitlement": 10,
+  "annual_leave_special_extra": 0
+ },
+ {
+  "id": "E046",
+  "name": "張俊峰",
+  "role": "職員",
+  "monthly_salary": 15900,
+  "shift_mode": "晚",
+  "rest_weekday": 4,
+  "join_date": "2024-07-01",
+  "annual_leave_entitlement": 12,
+  "annual_leave_special_extra": 0
+ },
+ {
+  "id": "E047",
+  "name": "張家鳳",
+  "role": "職員",
+  "monthly_salary": 15700,
+  "shift_mode": "晚",
+  "rest_weekday": 5,
+  "join_date": "2019-03-01",
+  "annual_leave_entitlement": 12,
+  "annual_leave_special_extra": 0
+ },
+ {
+  "id": "E048",
+  "name": "吳偉龍",
+  "role": "職員",
+  "monthly_salary": 21200,
+  "shift_mode": "rotating",
+  "rest_weekday": 6,
+  "join_date": "2019-06-01",
+  "annual_leave_entitlement": 12,
+  "annual_leave_special_extra": 0
+ },
+ {
+  "id": "E049",
+  "name": "許麗怡",
+  "role": "職員",
+  "monthly_salary": 22500,
+  "shift_mode": "rotating",
+  "rest_weekday": 0,
+  "join_date": "2022-02-01",
+  "annual_leave_entitlement": 12,
+  "annual_leave_special_extra": 0
+ },
+ {
+  "id": "E050",
+  "name": "鍾美雯",
+  "role": "職員",
+  "monthly_salary": 23100,
+  "shift_mode": "夜",
+  "rest_weekday": 1,
+  "join_date": "2026-03-01",
+  "annual_leave_entitlement": 10,
+  "annual_leave_special_extra": 0
+ },
+ {
+  "id": "E051",
+  "name": "王敏峰",
+  "role": "職員",
+  "monthly_salary": 18300,
+  "shift_mode": "夜",
+  "rest_weekday": 2,
+  "join_date": "2026-03-01",
+  "annual_leave_entitlement": 10,
+  "annual_leave_special_extra": 0
+ },
+ {
+  "id": "E052",
+  "name": "謝志明",
+  "role": "職員",
+  "monthly_salary": 22900,
+  "shift_mode": "夜",
+  "rest_weekday": 3,
+  "join_date": "2026-04-01",
+  "annual_leave_entitlement": 9,
+  "annual_leave_special_extra": 0
+ },
+ {
+  "id": "E053",
+  "name": "鍾麗傑",
+  "role": "職員",
+  "monthly_salary": 20600,
+  "shift_mode": "rotating",
+  "rest_weekday": 4,
+  "join_date": "2020-11-01",
+  "annual_leave_entitlement": 12,
+  "annual_leave_special_extra": 0
+ },
+ {
+  "id": "E054",
+  "name": "林國傑",
+  "role": "職員",
+  "monthly_salary": 15300,
+  "shift_mode": "rotating",
+  "rest_weekday": 5,
+  "join_date": "2020-07-01",
+  "annual_leave_entitlement": 12,
+  "annual_leave_special_extra": 0
+ },
+ {
+  "id": "E055",
+  "name": "劉建鳳",
+  "role": "職員",
+  "monthly_salary": 20900,
+  "shift_mode": "rotating",
+  "rest_weekday": 6,
+  "join_date": "2023-01-01",
+  "annual_leave_entitlement": 12,
+  "annual_leave_special_extra": 0
+ },
+ {
+  "id": "E056",
+  "name": "鄭思婷",
+  "role": "職員",
+  "monthly_salary": 18000,
+  "shift_mode": "rotating",
+  "rest_weekday": 0,
+  "join_date": "2025-08-01",
+  "annual_leave_entitlement": 12,
+  "annual_leave_special_extra": 0
+ },
+ {
+  "id": "E057",
+  "name": "李健龍",
+  "role": "職員",
+  "monthly_salary": 15000,
+  "shift_mode": "夜",
+  "rest_weekday": 1,
+  "join_date": "2019-06-01",
+  "annual_leave_entitlement": 12,
+  "annual_leave_special_extra": 0
+ },
+ {
+  "id": "E058",
+  "name": "劉偉英",
+  "role": "職員",
+  "monthly_salary": 18000,
+  "shift_mode": "rotating",
+  "rest_weekday": 2,
+  "join_date": "2026-05-01",
+  "annual_leave_entitlement": 8,
+  "annual_leave_special_extra": 0
+ },
+ {
+  "id": "E059",
+  "name": "郭偉峰",
+  "role": "職員",
+  "monthly_salary": 22500,
+  "shift_mode": "rotating",
+  "rest_weekday": 3,
+  "join_date": "2025-11-01",
+  "annual_leave_entitlement": 12,
+  "annual_leave_special_extra": 0
+ },
+ {
+  "id": "E060",
+  "name": "曾文軍",
+  "role": "職員",
+  "monthly_salary": 24000,
+  "shift_mode": "早",
+  "rest_weekday": 4,
+  "join_date": "2024-10-01",
+  "annual_leave_entitlement": 12,
+  "annual_leave_special_extra": 0
+ },
+ {
+  "id": "E061",
+  "name": "劉家儀",
+  "role": "職員",
+  "monthly_salary": 22300,
+  "shift_mode": "rotating",
+  "rest_weekday": 5,
+  "join_date": "2022-02-01",
+  "annual_leave_entitlement": 12,
+  "annual_leave_special_extra": 0
+ },
+ {
+  "id": "E062",
+  "name": "何偉浩",
+  "role": "職員",
+  "monthly_salary": 18400,
+  "shift_mode": "rotating",
+  "rest_weekday": 6,
+  "join_date": "2024-07-01",
+  "annual_leave_entitlement": 12,
+  "annual_leave_special_extra": 0
+ },
+ {
+  "id": "E063",
+  "name": "李國傑",
+  "role": "職員",
+  "monthly_salary": 15100,
+  "shift_mode": "rotating",
+  "rest_weekday": 0,
+  "join_date": "2023-09-01",
+  "annual_leave_entitlement": 12,
+  "annual_leave_special_extra": 0
+ },
+ {
+  "id": "E064",
+  "name": "蕭建峰",
+  "role": "職員",
+  "monthly_salary": 16200,
+  "shift_mode": "rotating",
+  "rest_weekday": 1,
+  "join_date": "2021-06-01",
+  "annual_leave_entitlement": 12,
+  "annual_leave_special_extra": 0
+ },
+ {
+  "id": "E065",
+  "name": "李淑婷",
+  "role": "職員",
+  "monthly_salary": 23200,
+  "shift_mode": "早",
+  "rest_weekday": 2,
+  "join_date": "2026-05-01",
+  "annual_leave_entitlement": 8,
+  "annual_leave_special_extra": 0
  },
  {
   "id": "E066",
-  "name": "鄭嘉賢",
+  "name": "林思婷",
   "role": "職員",
-  "monthly_salary": 19900,
-  "shift_mode": "rotating",
-  "rest_weekday": 3
+  "monthly_salary": 18900,
+  "shift_mode": "夜",
+  "rest_weekday": 3,
+  "join_date": "2022-11-01",
+  "annual_leave_entitlement": 12,
+  "annual_leave_special_extra": 0
  },
  {
   "id": "E067",
-  "name": "何偉傑",
+  "name": "鄭建華",
   "role": "職員",
-  "monthly_salary": 20100,
-  "shift_mode": "晚",
-  "rest_weekday": 4
+  "monthly_salary": 20400,
+  "shift_mode": "早",
+  "rest_weekday": 4,
+  "join_date": "2026-07-01",
+  "annual_leave_entitlement": 6,
+  "annual_leave_special_extra": 0
  },
  {
   "id": "E068",
-  "name": "鄭芳怡",
+  "name": "黃靜傑",
   "role": "職員",
-  "monthly_salary": 20000,
-  "shift_mode": "早",
-  "rest_weekday": 5
+  "monthly_salary": 15500,
+  "shift_mode": "rotating",
+  "rest_weekday": 5,
+  "join_date": "2026-04-01",
+  "annual_leave_entitlement": 11,
+  "annual_leave_special_extra": 3
  },
  {
   "id": "E069",
-  "name": "吳美龍",
-  "role": "助理",
-  "monthly_salary": 14400,
-  "shift_mode": "rotating",
-  "rest_weekday": 6
- },
- {
-  "id": "E070",
-  "name": "蕭家君",
+  "name": "郭俊明",
   "role": "助理",
   "monthly_salary": 15500,
   "shift_mode": "rotating",
-  "rest_weekday": 0
+  "rest_weekday": 6,
+  "join_date": "2020-11-01",
+  "annual_leave_entitlement": 10,
+  "annual_leave_special_extra": 0
+ },
+ {
+  "id": "E070",
+  "name": "梁國傑",
+  "role": "助理",
+  "monthly_salary": 13000,
+  "shift_mode": "rotating",
+  "rest_weekday": 0,
+  "join_date": "2021-05-01",
+  "annual_leave_entitlement": 10,
+  "annual_leave_special_extra": 0
  },
  {
   "id": "E071",
-  "name": "謝佩明",
-  "role": "助理",
-  "monthly_salary": 12700,
-  "shift_mode": "rotating",
-  "rest_weekday": 1
- },
- {
-  "id": "E072",
-  "name": "鍾曉珊",
-  "role": "助理",
-  "monthly_salary": 14400,
-  "shift_mode": "rotating",
-  "rest_weekday": 2
- },
- {
-  "id": "E073",
-  "name": "林敏傑",
-  "role": "助理",
-  "monthly_salary": 14300,
-  "shift_mode": "rotating",
-  "rest_weekday": 3
- },
- {
-  "id": "E074",
-  "name": "鄭麗玲",
-  "role": "助理",
-  "monthly_salary": 15400,
-  "shift_mode": "rotating",
-  "rest_weekday": 4
- },
- {
-  "id": "E075",
-  "name": "蔡嘉欣",
-  "role": "助理",
-  "monthly_salary": 14000,
-  "shift_mode": "rotating",
-  "rest_weekday": 5
- },
- {
-  "id": "E076",
-  "name": "陳思欣",
-  "role": "助理",
-  "monthly_salary": 14900,
-  "shift_mode": "rotating",
-  "rest_weekday": 6
- },
- {
-  "id": "E077",
-  "name": "楊思英",
-  "role": "助理",
-  "monthly_salary": 12300,
-  "shift_mode": "rotating",
-  "rest_weekday": 0
- },
- {
-  "id": "E078",
-  "name": "王永英",
-  "role": "助理",
-  "monthly_salary": 14700,
-  "shift_mode": "rotating",
-  "rest_weekday": 1
- },
- {
-  "id": "E079",
-  "name": "鄭敏鳳",
-  "role": "助理",
-  "monthly_salary": 14500,
-  "shift_mode": "rotating",
-  "rest_weekday": 2
- },
- {
-  "id": "E080",
-  "name": "何永玲",
-  "role": "助理",
-  "monthly_salary": 14000,
-  "shift_mode": "晚",
-  "rest_weekday": 3
- },
- {
-  "id": "E081",
-  "name": "蕭俊賢",
-  "role": "助理",
-  "monthly_salary": 14100,
-  "shift_mode": "rotating",
-  "rest_weekday": 4
- },
- {
-  "id": "E082",
-  "name": "吳靜明",
-  "role": "助理",
-  "monthly_salary": 14000,
-  "shift_mode": "rotating",
-  "rest_weekday": 5
- },
- {
-  "id": "E083",
-  "name": "羅芳峰",
+  "name": "曾國龍",
   "role": "助理",
   "monthly_salary": 16000,
   "shift_mode": "rotating",
-  "rest_weekday": 6
+  "rest_weekday": 1,
+  "join_date": "2020-02-01",
+  "annual_leave_entitlement": 10,
+  "annual_leave_special_extra": 0
  },
  {
-  "id": "E084",
-  "name": "許敏欣",
+  "id": "E072",
+  "name": "謝靜玲",
+  "role": "助理",
+  "monthly_salary": 15500,
+  "shift_mode": "晚",
+  "rest_weekday": 2,
+  "join_date": "2026-07-01",
+  "annual_leave_entitlement": 5,
+  "annual_leave_special_extra": 0
+ },
+ {
+  "id": "E073",
+  "name": "鄭子浩",
+  "role": "助理",
+  "monthly_salary": 13100,
+  "shift_mode": "rotating",
+  "rest_weekday": 3,
+  "join_date": "2026-04-01",
+  "annual_leave_entitlement": 8,
+  "annual_leave_special_extra": 0
+ },
+ {
+  "id": "E074",
+  "name": "陳佩君",
+  "role": "助理",
+  "monthly_salary": 13200,
+  "shift_mode": "rotating",
+  "rest_weekday": 4,
+  "join_date": "2022-06-01",
+  "annual_leave_entitlement": 10,
+  "annual_leave_special_extra": 0
+ },
+ {
+  "id": "E075",
+  "name": "曾嘉賢",
   "role": "助理",
   "monthly_salary": 14700,
   "shift_mode": "rotating",
-  "rest_weekday": 0
+  "rest_weekday": 5,
+  "join_date": "2023-10-01",
+  "annual_leave_entitlement": 10,
+  "annual_leave_special_extra": 0
  },
  {
-  "id": "E085",
-  "name": "蔡佩珊",
+  "id": "E076",
+  "name": "何芳玲",
   "role": "助理",
-  "monthly_salary": 14500,
-  "shift_mode": "晚",
-  "rest_weekday": 1
- },
- {
-  "id": "E086",
-  "name": "蕭偉軍",
-  "role": "助理",
-  "monthly_salary": 14900,
+  "monthly_salary": 15200,
   "shift_mode": "rotating",
-  "rest_weekday": 2
+  "rest_weekday": 6,
+  "join_date": "2026-01-01",
+  "annual_leave_entitlement": 10,
+  "annual_leave_special_extra": 0
  },
  {
-  "id": "E087",
-  "name": "鄭曉玲",
+  "id": "E077",
+  "name": "鄭偉玲",
   "role": "助理",
-  "monthly_salary": 15800,
+  "monthly_salary": 12300,
   "shift_mode": "rotating",
-  "rest_weekday": 3
+  "rest_weekday": 0,
+  "join_date": "2021-12-01",
+  "annual_leave_entitlement": 10,
+  "annual_leave_special_extra": 0
  },
  {
-  "id": "E088",
-  "name": "王健賢",
+  "id": "E078",
+  "name": "許家鳳",
   "role": "助理",
   "monthly_salary": 14000,
-  "shift_mode": "rotating",
-  "rest_weekday": 4
+  "shift_mode": "晚",
+  "rest_weekday": 1,
+  "join_date": "2025-01-01",
+  "annual_leave_entitlement": 14,
+  "annual_leave_special_extra": 4
  },
  {
-  "id": "E089",
-  "name": "陳國浩",
+  "id": "E079",
+  "name": "郭志鳳",
+  "role": "助理",
+  "monthly_salary": 14300,
+  "shift_mode": "早",
+  "rest_weekday": 2,
+  "join_date": "2026-04-01",
+  "annual_leave_entitlement": 8,
+  "annual_leave_special_extra": 0
+ },
+ {
+  "id": "E080",
+  "name": "李永峰",
+  "role": "助理",
+  "monthly_salary": 14700,
+  "shift_mode": "rotating",
+  "rest_weekday": 3,
+  "join_date": "2024-10-01",
+  "annual_leave_entitlement": 10,
+  "annual_leave_special_extra": 0
+ },
+ {
+  "id": "E081",
+  "name": "林美龍",
+  "role": "助理",
+  "monthly_salary": 15400,
+  "shift_mode": "晚",
+  "rest_weekday": 4,
+  "join_date": "2023-03-01",
+  "annual_leave_entitlement": 10,
+  "annual_leave_special_extra": 0
+ },
+ {
+  "id": "E082",
+  "name": "梁國儀",
   "role": "助理",
   "monthly_salary": 14400,
   "shift_mode": "rotating",
-  "rest_weekday": 5
+  "rest_weekday": 5,
+  "join_date": "2026-06-01",
+  "annual_leave_entitlement": 6,
+  "annual_leave_special_extra": 0
+ },
+ {
+  "id": "E083",
+  "name": "劉靜浩",
+  "role": "助理",
+  "monthly_salary": 13400,
+  "shift_mode": "晚",
+  "rest_weekday": 6,
+  "join_date": "2022-11-01",
+  "annual_leave_entitlement": 10,
+  "annual_leave_special_extra": 0
+ },
+ {
+  "id": "E084",
+  "name": "林敏儀",
+  "role": "助理",
+  "monthly_salary": 14000,
+  "shift_mode": "rotating",
+  "rest_weekday": 0,
+  "join_date": "2022-09-01",
+  "annual_leave_entitlement": 10,
+  "annual_leave_special_extra": 0
+ },
+ {
+  "id": "E085",
+  "name": "黃思玲",
+  "role": "助理",
+  "monthly_salary": 13100,
+  "shift_mode": "夜",
+  "rest_weekday": 1,
+  "join_date": "2025-06-01",
+  "annual_leave_entitlement": 10,
+  "annual_leave_special_extra": 0
+ },
+ {
+  "id": "E086",
+  "name": "梁曉婷",
+  "role": "助理",
+  "monthly_salary": 12500,
+  "shift_mode": "rotating",
+  "rest_weekday": 2,
+  "join_date": "2022-02-01",
+  "annual_leave_entitlement": 10,
+  "annual_leave_special_extra": 0
+ },
+ {
+  "id": "E087",
+  "name": "謝麗珊",
+  "role": "助理",
+  "monthly_salary": 14900,
+  "shift_mode": "rotating",
+  "rest_weekday": 3,
+  "join_date": "2025-04-01",
+  "annual_leave_entitlement": 10,
+  "annual_leave_special_extra": 0
+ },
+ {
+  "id": "E088",
+  "name": "羅麗欣",
+  "role": "助理",
+  "monthly_salary": 13700,
+  "shift_mode": "夜",
+  "rest_weekday": 4,
+  "join_date": "2026-03-01",
+  "annual_leave_entitlement": 8,
+  "annual_leave_special_extra": 0
+ },
+ {
+  "id": "E089",
+  "name": "林建君",
+  "role": "助理",
+  "monthly_salary": 14600,
+  "shift_mode": "rotating",
+  "rest_weekday": 5,
+  "join_date": "2025-08-01",
+  "annual_leave_entitlement": 10,
+  "annual_leave_special_extra": 0
  },
  {
   "id": "E090",
-  "name": "蔡永鳳",
+  "name": "林曉峰",
   "role": "助理",
-  "monthly_salary": 14900,
+  "monthly_salary": 14700,
   "shift_mode": "rotating",
-  "rest_weekday": 6
+  "rest_weekday": 6,
+  "join_date": "2025-06-01",
+  "annual_leave_entitlement": 10,
+  "annual_leave_special_extra": 0
  },
  {
   "id": "E091",
-  "name": "何佩雯",
+  "name": "曾麗英",
   "role": "助理",
-  "monthly_salary": 12800,
+  "monthly_salary": 13100,
   "shift_mode": "rotating",
-  "rest_weekday": 0
+  "rest_weekday": 0,
+  "join_date": "2019-09-01",
+  "annual_leave_entitlement": 10,
+  "annual_leave_special_extra": 0
  },
  {
   "id": "E092",
-  "name": "張芳鳳",
+  "name": "何國玲",
   "role": "助理",
-  "monthly_salary": 14900,
+  "monthly_salary": 15800,
   "shift_mode": "rotating",
-  "rest_weekday": 1
+  "rest_weekday": 1,
+  "join_date": "2019-01-01",
+  "annual_leave_entitlement": 10,
+  "annual_leave_special_extra": 0
  },
  {
   "id": "E093",
-  "name": "羅思君",
+  "name": "羅靜珊",
   "role": "助理",
-  "monthly_salary": 13600,
-  "shift_mode": "rotating",
-  "rest_weekday": 2
+  "monthly_salary": 15900,
+  "shift_mode": "早",
+  "rest_weekday": 2,
+  "join_date": "2025-06-01",
+  "annual_leave_entitlement": 10,
+  "annual_leave_special_extra": 0
  },
  {
   "id": "E094",
-  "name": "王志雯",
+  "name": "吳健明",
   "role": "助理",
-  "monthly_salary": 14100,
-  "shift_mode": "rotating",
-  "rest_weekday": 3
+  "monthly_salary": 15700,
+  "shift_mode": "晚",
+  "rest_weekday": 3,
+  "join_date": "2026-05-01",
+  "annual_leave_entitlement": 7,
+  "annual_leave_special_extra": 0
  },
  {
   "id": "E095",
-  "name": "劉文君",
+  "name": "鄭敏婷",
   "role": "助理",
-  "monthly_salary": 12200,
-  "shift_mode": "晚",
-  "rest_weekday": 4
+  "monthly_salary": 12900,
+  "shift_mode": "rotating",
+  "rest_weekday": 4,
+  "join_date": "2020-03-01",
+  "annual_leave_entitlement": 12,
+  "annual_leave_special_extra": 2
  },
  {
   "id": "E096",
-  "name": "何麗峰",
+  "name": "謝家峰",
   "role": "助理",
-  "monthly_salary": 14700,
-  "shift_mode": "晚",
-  "rest_weekday": 5
+  "monthly_salary": 14000,
+  "shift_mode": "rotating",
+  "rest_weekday": 5,
+  "join_date": "2023-11-01",
+  "annual_leave_entitlement": 10,
+  "annual_leave_special_extra": 0
  },
  {
   "id": "E097",
-  "name": "曾健玲",
+  "name": "吳美強",
   "role": "助理",
-  "monthly_salary": 13900,
-  "shift_mode": "rotating",
-  "rest_weekday": 6
+  "monthly_salary": 12300,
+  "shift_mode": "晚",
+  "rest_weekday": 6,
+  "join_date": "2019-09-01",
+  "annual_leave_entitlement": 10,
+  "annual_leave_special_extra": 0
  },
  {
   "id": "E098",
-  "name": "羅志華",
+  "name": "陳敏豪",
   "role": "助理",
-  "monthly_salary": 13300,
-  "shift_mode": "rotating",
-  "rest_weekday": 0
+  "monthly_salary": 15100,
+  "shift_mode": "晚",
+  "rest_weekday": 0,
+  "join_date": "2022-10-01",
+  "annual_leave_entitlement": 10,
+  "annual_leave_special_extra": 0
  },
  {
   "id": "E099",
-  "name": "陳敏峰",
+  "name": "何建強",
   "role": "助理",
-  "monthly_salary": 15100,
+  "monthly_salary": 13300,
   "shift_mode": "rotating",
-  "rest_weekday": 1
+  "rest_weekday": 1,
+  "join_date": "2021-09-01",
+  "annual_leave_entitlement": 10,
+  "annual_leave_special_extra": 0
  },
  {
   "id": "E100",
-  "name": "許偉儀",
+  "name": "蕭文雯",
   "role": "助理",
-  "monthly_salary": 12100,
-  "shift_mode": "晚",
-  "rest_weekday": 2
+  "monthly_salary": 12900,
+  "shift_mode": "rotating",
+  "rest_weekday": 2,
+  "join_date": "2023-12-01",
+  "annual_leave_entitlement": 10,
+  "annual_leave_special_extra": 0
  }
 ]
