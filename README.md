@@ -8,6 +8,7 @@
 ```bash
 python3 simulate.py      # 生成 100 人 × 2026年9月 模擬數據 → data/
 python3 test_payroll.py  # 13 tests：職業稅制
+python3 ui/build_ui.py  # 打包單檔網頁 UI
 python3 report.py  # 計糧 + 輸出 CSV (Excel 開到)
 python3 test_payslip.py  # 28 tests：糧單個案 + 年假額度 + 社保 + 法定假日工作/颱風 + 報表 + 模擬不變量
 ```
@@ -28,8 +29,10 @@ slip = compute_payslip(employees[0], records["E001"])
 | `payroll.py` | 澳門職業稅：年稅／月代扣／年實收 |
 | `simulate.py` | 模擬 100 員工 × 2026年9月：輪更、打卡、年假／病假／無薪假／缺勤 |
 | `payslip.py` | 糧單：出勤記錄 → 應稅工資 → 稅 → 實發 |
+| `payroll-ui.html` | 單檔網頁 UI：雙擊即用，零依賴，內置模擬數據，可上傳真實數據，下載 CSV |
+| `report.py` | HR 報表：計糧 + 輸出 payslips_2026-09.csv（Excel 開到） |
 | `test_payroll.py` | 13 tests：稅制（預期值人手按官方稅表計出） |
-| `test_payslip.py` | 27 tests：人手糧單個案 + 年假額度 + 社保 + 法定假日工作/颱風 + 100 人模擬不變量 |
+| `test_payslip.py` | 28 tests：人手糧單個案 + 年假額度 + 社保 + 法定假日工作/颱風 + 報表 + 100 人模擬不變量 |
 | `data/` | 模擬數據（employees.json、records.json，供檢查） |
 
 ## 糧單計算規則

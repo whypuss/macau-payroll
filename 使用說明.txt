@@ -1,15 +1,20 @@
 macau-payroll 使用說明 (公司受限電腦適用)
 ==========================================
 
-呢個包唔使安裝、唔使管理員權限、唔使上網、唔使 pip。
-全部只用 Python 標準庫, 公司電腦一般擋唔到。
+
+1. 雙擊 payroll-ui.html (用瀏覽器開, 唔使上網, 唔使安裝)
+2. 按「計算糧單」: 即見總覽 + 100 人糧單表, 撳人名睇逐項明細
+3. 按「下載 CSV」: 出糧單表, Excel 開到
+4. 真實出糧: 選「上傳真實數據」, 上傳員工 JSON + 記錄 JSON 即可
+5. 颱風倍數/津貼喺頁面直接改, 即時重計
 
 
 1. 將成個資料夾 copy 入公司電腦 (USB / 內網 / email 附件都得)
 2. 雙擊 RUN.bat
 3. 完成後會產生 payslips_2026-09.csv, Excel 直接開到 (中文已處理好)
 4. 想驗證計算正確: 開 cmd, 打 py test_payslip.py
-應顯示 27 tests passed (另加 test_payroll.py 13 tests)
+應顯示 28 tests passed (另加 test_payroll.py 13 tests)
+呢個包只用 Python 標準庫, 唔使安裝、唔使管理員權限、唔使 pip
 
 
 1. 喺有權限嘅電腦去 python.org 下載 "Windows embeddable package (64-bit)"
@@ -20,17 +25,20 @@ macau-payroll 使用說明 (公司受限電腦適用)
 
 - 而家預設係模擬 100 人 2026年9月 數據 (seed 固定, 次次一樣)
 - 真實出糧: 將 data/records.json 換成真實打卡記錄 (格式照舊),
-data/employees.json 換成真實員工資料, 再跑 RUN.bat
+data/employees.json 換成真實員工資料, 再跑 RUN.bat;
+或喺網頁版直接上傳兩個 JSON
 - 記錄類型: work / annual / sick / nopay / absent /
 holiday_work / restday_work / typhoon_work / comp_leave
-- 颱風參數 (payslip.py 頂部): TYPHOON_EXTRA_MULT、TYPHOON_ALLOWANCE
-按公司政策修改; 法定假日倍數唔好亂改
+- 颱風參數: 網頁版喺頁面改; Python 版改 payslip.py 頂部
+TYPHOON_EXTRA_MULT、TYPHOON_ALLOWANCE; 法定假日倍數唔好亂改
 
 
+payroll-ui.html 單檔網頁 UI (雙擊即用)
 payroll.py 職業稅制
 payslip.py 糧單計算 (核心)
 simulate.py 模擬數據
 report.py 計糧 + 輸出 CSV
-test_*.py 測試 (40 個)
+test_*.py 測試 (41 個)
 RUN.bat 一鍵執行 (Windows)
 data/ 模擬員工 + 記錄
+ui/ 網頁版原始碼 (payroll-core.js + 打包 script)

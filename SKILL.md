@@ -11,6 +11,7 @@
 | `simulate.py` | 模擬 100 員工 × 2026年9月: 輪更、打卡、年假/病假/無薪假 |
 | `payslip.py` | 糧單計算: 出勤記錄 → 應稅工資 → 稅 → 實發 |
 | `test_payroll.py` | 13 tests: 稅制 (預期值人手按官方稅表計出) |
+| `payroll-ui.html` | 單檔網頁 UI: 雙擊即用, 零依賴, 內置模擬數據, 可上傳真實數據, 下載 CSV |
 | `report.py` | HR 報表: 計糧 + 輸出 payslips_2026-09.csv (Excel 開到) |
 | `test_payslip.py` | 28 tests: 人手糧單個案 + 年假額度 + 社保 + 法定假日工作/颱風 + 報表 + 100 人模擬不變量 |
 | `data/` | 模擬數據 (employees.json, records.json, 供檢查) |
@@ -21,6 +22,7 @@
 cd ~/workspace/skills/macau-payroll
 python3 simulate.py          # 生成 100 人模擬數據 → data/
 python3 test_payroll.py      # 13 tests, 稅制
+python3 ui/build_ui.py         # 打包單檔網頁 UI -> payroll-ui.html
 python3 report.py             # 計糧 + 輸出 CSV
 python3 test_payslip.py      # 28 tests, 糧單
 ```

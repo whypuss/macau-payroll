@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>澳門糧單計算</title>
+<style>
+  * { box-sizing: border-box; }
+  body { font-family: -apple-system, "Segoe UI", "Microsoft JhengHei", sans-serif;
+         margin: 0; padding: 16px; background: #f4f5f7; color: #222; }
+  h1 { font-size: 20px; margin: 0 0 12px; }
+  .card { background: #fff; border-radius: 8px; padding: 14px 16px;
+          margin-bottom: 12px; box-shadow: 0 1px 3px rgba(0,0,0,.08); }
+  .row { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; }
+  label { font-size: 14px; }
+  input[type=number], input[type=file] { font-size: 14px; }
+  input[type=number] { width: 90px; padding: 4px 6px; }
+  button { font-size: 14px; padding: 7px 16px; border: 0; border-radius: 6px;
+           background: #1a73e8; color: #fff; cursor: pointer; }
+  button:hover { background: #1558b0; }
+  button.ghost { background: #e8eaed; color: #222; }
+  .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 10px; }
+  .stat { background: #fff; border-radius: 8px; padding: 10px 12px; box-shadow: 0 1px 3px rgba(0,0,0,.08); }
+  .stat .k { font-size: 12px; color: #666; }
+  .stat .v { font-size: 19px; font-weight: 700; margin-top: 2px; }
+  table { width: 100%; border-collapse: collapse; font-size: 13px; background: #fff; }
+  th, td { padding: 7px 8px; border-bottom: 1px solid #eee; text-align: right; white-space: nowrap; }
+  th:first-child, td:first-child, th:nth-child(2), td:nth-child(2), th:nth-child(3), td:nth-child(3) { text-align: left; }
+  th { background: #fafbfc; position: sticky; top: 0; }
+  tbody tr { cursor: pointer; }
+  tbody tr:hover { background: #f0f6ff; }
+  .wrap { overflow-x: auto; border-radius: 8px; box-shadow: 0 1px 3px rgba(0,0,0,.08); }
+  #detail { display: none; }
+  #detail table td { text-align: right; }
+  #detail table td:first-child { text-align: left; color: #555; }
+  .note { font-size: 12px; color: #777; margin-top: 8px; }
+  .hidden { display: none; }
+</style>
+</head>
+<body>
+<h1>澳門糧單計算 <span style="font-size:12px;color:#777;font-weight:400">2026年9月</span></h1>
+
+<div class="card">
+  <div class="row">
+    <strong>數據來源:</strong>
+    <label><input type="radio" name="src" value="demo" checked> 模擬數據 (100人, 內置)</label>
+    <label><input type="radio" name="src" value="upload"> 上傳真實數據</label>
+    <span id="uploadBox" class="hidden">
+      員工: <input type="file" id="fEmp" accept=".json">
+      記錄: <input type="file" id="fRec" accept=".json">
+    </span>
+  </div>
+  <div class="row" style="margin-top:10px">
+    <strong>颱風參數 (公司政策):</strong>
+    <label>額外倍數 <input type="number" id="typhoonMult" value="1.0" step="0.5" min="0"></label>
+    <label>津貼 MOP/日 <input type="number" id="typhoonAllow" value="0" step="50" min="0"></label>
+    <button id="btnCalc">計算糧單</button>
+    <button id="btnCsv" class="ghost hidden">下載 CSV</button>
+  </div>
+  <div class="note">三工 = 強制性假日工作 (額外 2× 日薪)；雙工 = 週假工作 (額外 1× 日薪)；颱風無法定倍數，按公司政策計。全部計算與 Python 版逐個欄位驗證一致。</div>
+</div>
+
+<div id="summary" class="cards hidden"></div>
+
+<div class="card hidden" id="detail">
+  <strong id="detailTitle"></strong>
+  <table id="detailTable" style="margin-top:8px"></table>
+</div>
+
+<div class="wrap hidden" id="tableWrap" style="margin-top:12px">
+  <table>
+    <thead><tr>
+      <th>編號</th><th>姓名</th><th>職位</th><th>月薪</th><th>應稅工資</th>
+      <th>職業稅</th><th>社保</th><th>實發工資</th>
+    </tr></thead>
+    <tbody id="tbody"></tbody>
+  </table>
+</div>
+
+<script>
+/*__CORE_JS__*/
+const EMBEDDED_EMPLOYEES = /*__EMPLOYEES__*/;
+const EMBEDDED_RECORDS = /*__RECORDS__*/;
+
+let uploaded = null, curSlips = [], curTotals = null;
+const $ = (id) => document.getElementById(id);
+const fmt = (n) => Number(n).toLocaleString("en-US", {minimumFractionDigits: 2, maximumFractionDigits: 2});
+
+document.querySelectorAll('input[name=src]').forEach(r => r.addEventListener('change', () => {
+  $("uploadBox").classList.toggle("hidden", document.querySelector('input[name=src]:checked').value !== "upload");
+}));
+
+function readFile(file) {
+  return new Promise((res, rej) => {
+    const fr = new FileReader();
+    fr.onload = () => { try { res(JSON.parse(fr.result)); } catch (e) { rej(e); } };
+    fr.onerror = rej;
+    fr.readAsText(file, "utf-8");
+  });
+}
+
+async function getData() {
+  if (document.querySelector('input[name=src]:checked').value === "upload") {
+    const fe = $("fEmp").files[0], fr = $("fRec").files[0];
+    if (!fe || !fr) { alert("請選擇員工 JSON 同記錄 JSON"); return null; }
+    const employees = await readFile(fe), records = await readFile(fr);
+    return { employees, records };
+  }
+  return { employees: EMBEDDED_EMPLOYEES, records: EMBEDDED_RECORDS };
+}
+
+$("btnCalc").addEventListener("click", async () => {
+  const data = await getData();
+  if (!data) return;
+  TYPHOON_EXTRA_MULT = parseFloat($("typhoonMult").value) || 0;
+  TYPHOON_ALLOWANCE = parseFloat($("typhoonAllow").value) || 0;
+  const t0 = performance.now();
+  const r = payrollRun(data.employees, data.records);
+  curSlips = r.slips; curTotals = r.totals;
+  renderSummary(r.totals);
+  renderTable(r.slips);
+  $("btnCsv").classList.remove("hidden");
+  console.log("計算用時 " + Math.round(performance.now() - t0) + "ms");
+});
+
+function renderSummary(t) {
+  const items = [
+    ["人數", t.headcount + " 人", false],
+    ["應稅總額", "MOP " + fmt(t.total_taxable), true],
+    ["職業稅總額", "MOP " + fmt(t.total_tax), true],
+    ["實發總額", "MOP " + fmt(t.total_net), true],
+    ["僱員社保", "MOP " + fmt(t.total_fss_employee), true],
+    ["僱主社保", "MOP " + fmt(t.total_fss_employer), true],
+  ];
+  $("summary").innerHTML = items.map(([k, v]) =>
+    `<div class="stat"><div class="k">${k}</div><div class="v">${v}</div></div>`).join("");
+  $("summary").classList.remove("hidden");
+}
+
+function renderTable(slips) {
+  $("tbody").innerHTML = slips.map((s, i) =>
+    `<tr data-i="${i}"><td>${s.id}</td><td>${s.name}</td><td>${s.role}</td>` +
+    `<td>${fmt(s.monthly_salary)}</td><td>${fmt(s.taxable_income)}</td>` +
+    `<td>${fmt(s.tax_withheld)}</td><td>${fmt(s.deductions.total)}</td>` +
+    `<td><strong>${fmt(s.net_pay)}</strong></td></tr>`).join("");
+  $("tableWrap").classList.remove("hidden");
+  $("tbody").querySelectorAll("tr").forEach(tr =>
+    tr.addEventListener("click", () => showDetail(curSlips[+tr.dataset.i])));
+}
+
+function showDetail(s) {
+  $("detailTitle").textContent = `${s.id} ${s.name} (${s.role}) — 糧單明細`;
+  const d = s.deductions;
+  const rows = [
+    ["月薪", fmt(s.monthly_salary)], ["日薪", fmt(s.daily_rate)],
+    [`夜更津貼 (${s.night_shifts} 更)`, fmt(s.night_allowance)],
+    [`加班費 (${s.ot_hours} 小時)`, fmt(s.overtime_pay)],
+    [`強制性假日工作 (${s.holiday_work_days} 天, 三工)`, fmt(s.holiday_work_extra)],
+    [`週假工作 (${s.restday_work_days} 天, 雙工)`, fmt(s.restday_work_extra)],
+    [`颱風工作 (${s.typhoon_work_days} 天)`, fmt(s.typhoon_work_extra)],
+    ["颱風津貼", fmt(s.typhoon_allowance)],
+    ["扣: 無薪假/超額年假", "-" + fmt(d.nopay)],
+    ["扣: 缺勤", "-" + fmt(d.absent)],
+    ["扣: 無證病假", "-" + fmt(d.sick_uncertified)],
+    [`扣: 遲到 (${s.late_min_charged} 分鐘)`, "-" + fmt(d.late)],
+    ["扣: 社保僱員供款", "-" + fmt(d.social_security)],
+    ["應稅工資", fmt(s.taxable_income)],
+    ["職業稅 (代扣)", "-" + fmt(s.tax_withheld)],
+    ["欠補假日數", s.comp_leave_owed_days + " 天"],
+    ["<strong>實發工資</strong>", "<strong>" + fmt(s.net_pay) + "</strong>"],
+  ];
+  $("detailTable").innerHTML = rows.map(([k, v]) => `<tr><td>${k}</td><td>${v}</td></tr>`).join("");
+  $("detail").classList.remove("hidden");
+  $("detail").scrollIntoView({behavior: "smooth", block: "nearest"});
+}
+
+$("btnCsv").addEventListener("click", () => {
+  const head = ["員工編號","姓名","職位","月薪","日薪","夜更津貼","加班費",
+    "強制性假日工作額外報酬","週假工作額外報酬","颱風工作額外報酬","颱風津貼",
+    "應稅工資","職業稅","社保僱員供款","實發工資","欠補假日數"];
+  const lines = [head.join(",")];
+  for (const s of curSlips) {
+    lines.push([s.id, s.name, s.role, s.monthly_salary, s.daily_rate,
+      s.night_allowance, s.overtime_pay, s.holiday_work_extra, s.restday_work_extra,
+      s.typhoon_work_extra, s.typhoon_allowance, s.taxable_income, s.tax_withheld,
+      s.social_security_employee, s.net_pay, s.comp_leave_owed_days].join(","));
+  }
+  const blob = new Blob(["\ufeff" + lines.join("\n")], {type: "text/csv;charset=utf-8"});
+  const a = document.createElement("a");
+  a.href = URL.createObjectURL(blob);
+  a.download = "payslips_2026-09.csv";
+  a.click();
+  URL.revokeObjectURL(a.href);
+});
+</script>
+</body>
+</html>
